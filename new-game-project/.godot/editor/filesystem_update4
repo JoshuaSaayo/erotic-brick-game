@@ -1,0 +1,6 @@
+res://main_scenes/paddle.tscn
+res://main_scenes/paddle.gd
+res://main_scenes/game.tscn
+res://main_scenes/ball.tscn
+res://main_scenes/ball.gd
+res://main_scenes/wall.tscn

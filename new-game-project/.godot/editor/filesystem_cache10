@@ -1,0 +1,14 @@
+47addf8c712eb74750bf17ba249ecb3f
+::res://::1766317051
+icon.svg::CompressedTexture2D/CompressedTexture2D::1097574873903855765::1766059863::1766310945::1::::<><><>0<>0<>361173e153fec65150ef42df4695c643<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+intro.tscn::PackedScene/PackedScene::8431925858871168546::1766059863::0::1::::<><><>0<>0<><>::
+::res://assets/::1766311602
+ball.png::CompressedTexture2D/CompressedTexture2D::3540954436630214452::1766311601::1766311602::1::::<><><>0<>0<>12dedaabc5f24b55704b0a83e761eddf<>res://.godot/imported/ball.png-ca93c4f2e7b7f8325cbd933673092ff4.ctex::
+brick_1.png::CompressedTexture2D/CompressedTexture2D::1194639585560171402::1766311601::1766311602::1::::<><><>0<>0<>fe44f74ec036fd98a6c8e9f6511c0b07<>res://.godot/imported/brick_1.png-07784a7f43d4a7f64d613b815537f201.ctex::
+brick_2.png::CompressedTexture2D/CompressedTexture2D::2034514641886840302::1766311601::1766311602::1::::<><><>0<>0<>a117fba2d721bcd7c8505eeedf6fe805<>res://.godot/imported/brick_2.png-8f926c1ca05ba13f2d3c8a7ab013467b.ctex::
+brick_3.png::CompressedTexture2D/CompressedTexture2D::9005158816994587911::1766311601::1766311602::1::::<><><>0<>0<>cd8f41352794d0fd4db9166348982126<>res://.godot/imported/brick_3.png-0c5fc3015ee72bc63185eb1bd02b7e52.ctex::
+paddle.png::CompressedTexture2D/CompressedTexture2D::7937436024455668624::1766311601::1766311602::1::::<><><>0<>0<>6411aaea6381d7df8c82ec4461357295<>res://.godot/imported/paddle.png-3a0aaebe6a43044daf93673e46fcb481.ctex::
+::res://main_scenes/::1766312361
+game.tscn::PackedScene::6509983129535311384::1766312299::0::1::::<><><>0<>0<><>::uid://daaga543f6yyx::::res://main_scenes/paddle.tscn
+paddle.gd::GDScript::1877293238694376349::1766312336::0::1::::Paddle<>RigidBody2D<><>0<>0<><>::
+paddle.tscn::PackedScene::7159627974815854895::1766312361::0::1::::<><><>0<>0<><>::uid://10m0lv3ronx2::::res://main_scenes/paddle.gd<>uid://dlc7n84pg4xrk::::res://assets/paddle.png
