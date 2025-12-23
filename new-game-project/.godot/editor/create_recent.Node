@@ -1,3 +1,5 @@
+Marker2D
+Node
 CollisionShape2D
 AnimatedSprite2D
 TextureRect
@@ -11,4 +13,3 @@ HBoxContainer
 Panel
 CenterContainer
 MarginContainer
-CanvasLayer

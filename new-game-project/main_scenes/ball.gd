@@ -3,7 +3,7 @@ class_name Ball
 
 signal life_lost
 
-@export var ball_speed := 20.0
+@export var ball_speed := 15.0
 @export var lifes := 3
 @export var death_zone: DeathZone
 @export var hud: HUD
@@ -18,10 +18,14 @@ func _ready() -> void:
 	start_position = global_position
 	death_zone.life_lost.connect(on_life_lost)
 
-func _physics_process(_delta):
-	var collision = move_and_collide(velocity)
+func _physics_process(_delta: float) -> void:
+	var collision := move_and_collide(velocity)
 	if collision:
 		velocity = velocity.bounce(collision.get_normal())
+
+		var collider := collision.get_collider()
+		if collider is Brick:
+			collider.decrease_level()
 
 func _start_ball() -> void:
 	global_position = start_position

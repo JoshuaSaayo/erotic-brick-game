@@ -9,3 +9,5 @@ res://main_scenes/hud.gd
 res://main_scenes/ball.gd
 res://main_scenes/paddle.gd
 res://main_scenes/bricks.tscn
+res://main_scenes/bricks.gd
+res://main_scenes/brick_spawner.gd
