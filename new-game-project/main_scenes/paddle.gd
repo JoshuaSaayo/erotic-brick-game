@@ -44,3 +44,6 @@ func _physics_process(_delta: float) -> void:
 func on_ball_lost():
 	is_ball_started = false
 	direction = 0.0
+	
+func get_width():
+	return collision_shape_2d.shape.get_rect().size.x
