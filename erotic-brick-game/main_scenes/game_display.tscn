@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://dfsou32drvrg8"]
+
+[ext_resource type="Texture2D" uid="uid://ch3dnchwf8qy2" path="res://assets/backgrounds/map_1.png" id="1_nqdrg"]
+[ext_resource type="PackedScene" uid="uid://c3l552us7rwt5" path="res://lewds/lewdscenes/fleurdelis_level.tscn" id="1_pksj2"]
+[ext_resource type="Texture2D" uid="uid://b8xmlpoboa0oj" path="res://assets/game_assets/arcade.png" id="2_nqdrg"]
+[ext_resource type="Texture2D" uid="uid://deent88obxk6f" path="res://assets/backgrounds/screen_1.png" id="3_gio5p"]
+[ext_resource type="Texture2D" uid="uid://15yiy2sodrvh" path="res://assets/backgrounds/screen_2.png" id="4_tjrrn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sq7vp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_gio5p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_tjrrn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="game_display" type="Node2D"]
+
+[node name="Map" type="TextureRect" parent="."]
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+texture = ExtResource("1_nqdrg")
+
+[node name="fleurdelis_level" parent="." instance=ExtResource("1_pksj2")]
+position = Vector2(-651, -358)
+
+[node name="Arcade" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -256.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_nqdrg")
+
+[node name="Screen" type="AnimatedSprite2D" parent="Arcade"]
+position = Vector2(477, 376)
+sprite_frames = SubResource("SpriteFrames_sq7vp")
+autoplay = "default"
+speed_scale = 0.1

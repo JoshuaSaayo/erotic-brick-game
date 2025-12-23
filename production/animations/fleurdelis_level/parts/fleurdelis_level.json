@@ -1,0 +1,81 @@
+{ "skeleton": { "images": "C:/Users/Joshua PC/OneDrive/Desktop/parts/" },
+"PhotoshopToSpine": { "scale": 1, "padding": 1, "trim": true },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "BG", "bone": "root", "attachment": "BG" },
+	{ "name": "back_hair", "bone": "root", "attachment": "back_hair" },
+	{ "name": "l_arm", "bone": "root", "attachment": "l_arm" },
+	{ "name": "r_shoulder", "bone": "root", "attachment": "r_shoulder" },
+	{ "name": "r_arm", "bone": "root", "attachment": "r_arm" },
+	{ "name": "l_thigh", "bone": "root", "attachment": "l_thigh" },
+	{ "name": "r_thigh", "bone": "root", "attachment": "r_thigh" },
+	{ "name": "torso", "bone": "root", "attachment": "torso" },
+	{ "name": "boobs_clothes", "bone": "root", "attachment": "boobs_clothes" },
+	{ "name": "face", "bone": "root", "attachment": "face" },
+	{ "name": "mouth_1", "bone": "root", "attachment": "mouth_1" },
+	{ "name": "glasses", "bone": "root", "attachment": "glasses" },
+	{ "name": "bangs", "bone": "root", "attachment": "bangs" },
+	{ "name": "c_eyes", "bone": "root", "attachment": "c_eyes" },
+	{ "name": "o_eyes", "bone": "root", "attachment": "o_eyes" },
+	{ "name": "eyebrows", "bone": "root", "attachment": "eyebrows" },
+	{ "name": "hat", "bone": "root", "attachment": "hat" }
+],
+"skins": {
+	"default": {
+		"BG": {
+			"BG": { "x": 640, "y": -360, "width": 1282, "height": 722 }
+		},
+		"back_hair": {
+			"back_hair": { "x": 268, "y": -342, "width": 346, "height": 574 }
+		},
+		"l_arm": {
+			"l_arm": { "x": 192.5, "y": -468.5, "width": 143, "height": 383 }
+		},
+		"r_shoulder": {
+			"r_shoulder": { "x": 383.5, "y": -330.5, "width": 93, "height": 137 }
+		},
+		"r_arm": {
+			"r_arm": { "x": 400, "y": -461.5, "width": 154, "height": 283 }
+		},
+		"l_thigh": {
+			"l_thigh": { "x": 217.5, "y": -595, "width": 217, "height": 252 }
+		},
+		"r_thigh": {
+			"r_thigh": { "x": 289.5, "y": -582.5, "width": 243, "height": 277 }
+		},
+		"torso": {
+			"torso": { "x": 257.5, "y": -432, "width": 241, "height": 478 }
+		},
+		"boobs_clothes": {
+			"boobs_clothes": { "x": 263, "y": -384, "width": 216, "height": 154 }
+		},
+		"face": {
+			"face": { "x": 333, "y": -161, "width": 180, "height": 190 }
+		},
+		"mouth_1": {
+			"mouth_1": { "x": 331, "y": -228, "width": 34, "height": 20 }
+		},
+		"glasses": {
+			"glasses": { "x": 334.5, "y": -190, "width": 131, "height": 50 }
+		},
+		"bangs": {
+			"bangs": { "x": 326.5, "y": -161, "width": 197, "height": 206 }
+		},
+		"c_eyes": {
+			"c_eyes": { "x": 328.5, "y": -180, "width": 133, "height": 50 }
+		},
+		"o_eyes": {
+			"o_eyes": { "x": 336, "y": -180.5, "width": 112, "height": 51 }
+		},
+		"eyebrows": {
+			"eyebrows": { "x": 338.5, "y": -162.5, "width": 121, "height": 29 }
+		},
+		"hat": {
+			"hat": { "x": 381.5, "y": -128, "width": 521, "height": 258 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}
