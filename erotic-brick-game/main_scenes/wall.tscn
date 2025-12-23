@@ -3,8 +3,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v5epx"]
 size = Vector2(1280, 20)
 
-[node name="Wall" type="RigidBody2D"]
-freeze = true
+[node name="Wall" type="StaticBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_v5epx")
