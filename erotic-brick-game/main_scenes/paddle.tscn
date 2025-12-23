@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://daaga543f6yyx"]
+
+[ext_resource type="Script" uid="uid://10m0lv3ronx2" path="res://main_scenes/paddle.gd" id="1_4ca4o"]
+[ext_resource type="Texture2D" uid="uid://edo357e76qbd" path="res://assets/game_assets/paddle.png" id="1_8s6kt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8s6kt"]
+size = Vector2(100, 20)
+
+[node name="paddle" type="RigidBody2D"]
+collision_layer = 5
+gravity_scale = 0.0
+sleeping = true
+lock_rotation = true
+script = ExtResource("1_4ca4o")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_8s6kt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8s6kt")
