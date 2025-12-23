@@ -1,5 +1,10 @@
-[gd_scene format=3 uid="uid://bir24uh2mflix"]
+[gd_scene load_steps=2 format=3 uid="uid://bir24uh2mflix"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v5epx"]
+size = Vector2(1280, 20)
 
 [node name="Wall" type="RigidBody2D"]
+freeze = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_v5epx")

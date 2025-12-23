@@ -1,7 +1,7 @@
 extends RigidBody2D
 class_name Paddle
 
-@export var speed := 200.0
+@export var speed := 800.0
 @export var camera: Camera2D
 
 var direction := 0.0

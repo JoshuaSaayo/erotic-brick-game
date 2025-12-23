@@ -8,6 +8,8 @@
 [node name="ball" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_kj68u")
+ball_speed = null
+lifes = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_r3kqp")
