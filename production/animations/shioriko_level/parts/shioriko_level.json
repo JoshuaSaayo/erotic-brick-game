@@ -1,0 +1,117 @@
+{ "skeleton": { "images": "C:/Users/Joshua PC/OneDrive/Desktop/parts/" },
+"PhotoshopToSpine": { "scale": 1, "padding": 1, "trim": true },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "BG", "bone": "root", "attachment": "BG" },
+	{ "name": "back_hair", "bone": "root", "attachment": "back_hair" },
+	{ "name": "r_ear", "bone": "root", "attachment": "r_ear" },
+	{ "name": "l_ear", "bone": "root", "attachment": "l_ear" },
+	{ "name": "torso", "bone": "root", "attachment": "torso" },
+	{ "name": "r_thigh", "bone": "root", "attachment": "r_thigh" },
+	{ "name": "vagina", "bone": "root", "attachment": "vagina" },
+	{ "name": "l_thigh", "bone": "root", "attachment": "l_thigh" },
+	{ "name": "r_shoulder", "bone": "root", "attachment": "r_shoulder" },
+	{ "name": "r_boob", "bone": "root", "attachment": "r_boob" },
+	{ "name": "l_boob", "bone": "root", "attachment": "l_boob" },
+	{ "name": "clothes_2", "bone": "root", "attachment": "clothes_2" },
+	{ "name": "clothes", "bone": "root", "attachment": "clothes" },
+	{ "name": "r_arm", "bone": "root", "attachment": "r_arm" },
+	{ "name": "r_hand", "bone": "root", "attachment": "r_hand" },
+	{ "name": "l_sleeve", "bone": "root", "attachment": "l_sleeve" },
+	{ "name": "l_arm", "bone": "root", "attachment": "l_arm" },
+	{ "name": "hand", "bone": "root", "attachment": "hand" },
+	{ "name": "head", "bone": "root", "attachment": "head" },
+	{ "name": "mouth_1", "bone": "root", "attachment": "mouth_1" },
+	{ "name": "mouth_2", "bone": "root", "attachment": "mouth_2" },
+	{ "name": "c_eyes", "bone": "root", "attachment": "c_eyes" },
+	{ "name": "o_eyes", "bone": "root", "attachment": "o_eyes" },
+	{ "name": "bangs", "bone": "root", "attachment": "bangs" },
+	{ "name": "clip", "bone": "root", "attachment": "clip" },
+	{ "name": "glasses", "bone": "root", "attachment": "glasses" }
+],
+"skins": {
+	"default": {
+		"BG": {
+			"BG": { "x": 640, "y": -360, "width": 1282, "height": 722 }
+		},
+		"back_hair": {
+			"back_hair": { "x": 226.5, "y": -328.5, "width": 419, "height": 655 }
+		},
+		"r_ear": {
+			"r_ear": { "x": 437, "y": -99.5, "width": 104, "height": 109 }
+		},
+		"l_ear": {
+			"l_ear": { "x": 250, "y": -70.5, "width": 100, "height": 113 }
+		},
+		"torso": {
+			"torso": { "x": 226.5, "y": -427.5, "width": 293, "height": 409 }
+		},
+		"r_thigh": {
+			"r_thigh": { "x": 243.5, "y": -619.5, "width": 163, "height": 201 }
+		},
+		"vagina": {
+			"vagina": { "x": 178, "y": -611.5, "width": 78, "height": 45 }
+		},
+		"l_thigh": {
+			"l_thigh": { "x": 115.5, "y": -613.5, "width": 139, "height": 213 }
+		},
+		"r_shoulder": {
+			"r_shoulder": { "x": 386.5, "y": -403.5, "width": 87, "height": 235 }
+		},
+		"r_boob": {
+			"r_boob": { "x": 349.5, "y": -431, "width": 89, "height": 128 }
+		},
+		"l_boob": {
+			"l_boob": { "x": 264.5, "y": -421, "width": 93, "height": 120 }
+		},
+		"clothes_2": {
+			"clothes_2": { "x": 296.5, "y": -352, "width": 207, "height": 204 }
+		},
+		"clothes": {
+			"clothes": { "x": 210.5, "y": -475.5, "width": 387, "height": 451 }
+		},
+		"r_arm": {
+			"r_arm": { "x": 412, "y": -418, "width": 86, "height": 204 }
+		},
+		"r_hand": {
+			"r_hand": { "x": 386, "y": -337.5, "width": 74, "height": 63 }
+		},
+		"l_sleeve": {
+			"l_sleeve": { "x": 189, "y": -379, "width": 114, "height": 206 }
+		},
+		"l_arm": {
+			"l_arm": { "x": 214, "y": -415, "width": 146, "height": 212 }
+		},
+		"hand": {
+			"hand": { "x": 264.5, "y": -330.5, "width": 79, "height": 65 }
+		},
+		"head": {
+			"head": { "x": 330, "y": -176.5, "width": 182, "height": 217 }
+		},
+		"mouth_1": {
+			"mouth_1": { "x": 336.5, "y": -245, "width": 41, "height": 28 }
+		},
+		"mouth_2": {
+			"mouth_2": { "x": 337, "y": -250, "width": 50, "height": 46 }
+		},
+		"c_eyes": {
+			"c_eyes": { "x": 342.5, "y": -178.5, "width": 131, "height": 47 }
+		},
+		"o_eyes": {
+			"o_eyes": { "x": 344.5, "y": -185.5, "width": 131, "height": 61 }
+		},
+		"bangs": {
+			"bangs": { "x": 328.5, "y": -179, "width": 229, "height": 236 }
+		},
+		"clip": {
+			"clip": { "x": 411.5, "y": -106.5, "width": 65, "height": 65 }
+		},
+		"glasses": {
+			"glasses": { "x": 349, "y": -187.5, "width": 152, "height": 87 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}
