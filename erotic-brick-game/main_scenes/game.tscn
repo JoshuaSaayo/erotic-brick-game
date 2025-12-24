@@ -53,4 +53,4 @@ collision_layer = 4
 position = Vector2(-2, 355)
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(213, -156)
+position = Vector2(-6, -156)
