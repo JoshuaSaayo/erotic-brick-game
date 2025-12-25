@@ -20,7 +20,7 @@ config/icon="res://icon.svg"
 LevelDefinitions="*res://autoload/level_definitions.gd"
 GameState="*res://autoload/game_state.gd"
 DialogueManager="*res://autoload/dialogue_manager.gd"
-FlowManager="*res://autoload/game_flow_manager.gd"
+GameFlowManager="*res://autoload/game_flow_manager.gd"
 AnimationManager="*res://autoload/animation_manager.gd"
 
 [display]

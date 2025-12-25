@@ -15,3 +15,10 @@ var is_dialogue_active: bool = false
 
 signal phase_changed(new_phase: Phase)
 signal level_changed(new_level: int)
+
+# Helper function to change phase
+func change_phase(new_phase: Phase):
+	if current_phase != new_phase:
+		current_phase = new_phase
+		phase_changed.emit(new_phase)
+		print("GameState: Phase changed to ", new_phase)

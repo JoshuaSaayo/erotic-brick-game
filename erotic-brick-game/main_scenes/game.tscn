@@ -28,6 +28,8 @@ animations = [{
 
 [node name="game" type="Node2D"]
 
+[node name="HUD" parent="." instance=ExtResource("1_is35i")]
+
 [node name="Arcade" type="Node2D" parent="."]
 position = Vector2(640, 360)
 
@@ -83,7 +85,4 @@ hud = NodePath("../../HUD")
 [node name="BrickSpawner" type="Node" parent="." node_paths=PackedStringArray("spawn_start")]
 script = ExtResource("4_im5ls")
 brick_scene = ExtResource("5_6h35g")
-margin = null
 spawn_start = NodePath("../Arcade/Marker2D")
-
-[node name="HUD" parent="." instance=ExtResource("1_is35i")]

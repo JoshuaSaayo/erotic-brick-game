@@ -1,9 +1,9 @@
 extends Node
 
 static var level_1 = [
-	[1, 1, 1, 1],
-	[1, 2, 2, 1],
-	[1, 1, 1, 1]
+
+	[ 1,],
+
 ]
 
 static var level_2 = [

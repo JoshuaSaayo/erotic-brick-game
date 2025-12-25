@@ -4,6 +4,20 @@
 [ext_resource type="FontFile" uid="uid://dxuuui8nd1aca" path="res://UI/fonts/VT323-Regular.ttf" id="2_bae6o"]
 [ext_resource type="Texture2D" uid="uid://bpsg4pj0o8di8" path="res://assets/game_assets/speech_bubble.png" id="3_bae6o"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_xm3wr"]
+font = ExtResource("2_bae6o")
+font_size = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0tffd"]
+bg_color = Color(1, 0.101999, 0.828465, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xm3wr"]
+texture = ExtResource("3_bae6o")
+
+[sub_resource type="LabelSettings" id="LabelSettings_gpk1q"]
+font = ExtResource("2_bae6o")
+font_size = 32
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bae6o"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
@@ -22,36 +36,14 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ioly5"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[sub_resource type="LabelSettings" id="LabelSettings_xm3wr"]
-font = ExtResource("2_bae6o")
-font_size = 32
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0tffd"]
-bg_color = Color(1, 0.101999, 0.828465, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xm3wr"]
-texture = ExtResource("3_bae6o")
-
-[sub_resource type="LabelSettings" id="LabelSettings_gpk1q"]
-font = ExtResource("2_bae6o")
-font_size = 32
-
-[node name="HUD" type="CanvasLayer" node_paths=PackedStringArray("lifes_label")]
+[node name="HUD" type="CanvasLayer" node_paths=PackedStringArray("lifes_label", "next_button", "speech_bubble", "speech", "character_name", "game_lost_container")]
 script = ExtResource("1_0tffd")
 lifes_label = NodePath("MarginContainer/HBoxContainer/LifesLabel")
-
-[node name="NextBtn" type="Button" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/focus = SubResource("StyleBoxFlat_bae6o")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_xm3wr")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_gpk1q")
-theme_override_styles/hover = SubResource("StyleBoxFlat_eq5r8")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_a2j4f")
-theme_override_styles/normal = SubResource("StyleBoxFlat_ioly5")
+next_button = NodePath("NextBtn")
+speech_bubble = NodePath("SpeechBubble")
+speech = NodePath("SpeechBubble/Speech")
+character_name = NodePath("SpeechBubble/CharacterName")
+game_lost_container = NodePath("GameLostContainer")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -114,15 +106,38 @@ offset_right = 1028.0
 offset_bottom = 267.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_xm3wr")
 
+[node name="CharacterName" type="Label" parent="SpeechBubble"]
+self_modulate = Color(0, 0, 0, 1)
+offset_left = 30.0
+offset_top = 29.0
+offset_right = 171.0
+offset_bottom = 62.0
+size_flags_vertical = 0
+text = "lorem "
+label_settings = SubResource("LabelSettings_gpk1q")
+
 [node name="Speech" type="Label" parent="SpeechBubble"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = 30.0
-offset_top = 30.0
-offset_right = 133.0
-offset_bottom = 63.0
+offset_top = 61.0
+offset_right = 171.0
+offset_bottom = 94.0
 size_flags_vertical = 0
 text = "lorem ipsum"
 label_settings = SubResource("LabelSettings_gpk1q")
+
+[node name="NextBtn" type="Button" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxFlat_bae6o")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_xm3wr")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_gpk1q")
+theme_override_styles/hover = SubResource("StyleBoxFlat_eq5r8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_a2j4f")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ioly5")
 
 [connection signal="pressed" from="GameLostContainer/Panel/VBoxContainer/GameLostBtn" to="." method="_on_game_lost_btn_pressed"]

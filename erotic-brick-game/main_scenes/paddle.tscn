@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8s6kt"]
 size = Vector2(100, 20)
 
-[node name="paddle" type="RigidBody2D"]
+[node name="paddle" type="RigidBody2D" groups=["gameplay"]]
 collision_mask = 5
 gravity_scale = 0.0
 sleeping = true
