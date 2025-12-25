@@ -1,6 +1,8 @@
 extends Node
 class_name BrickSpawner
 
+signal level_completed
+
 @export var brick_scene: PackedScene
 @export var margin: Vector2 = Vector2(8, 8)
 @export var spawn_start: Marker2D
@@ -10,7 +12,7 @@ class_name BrickSpawner
 var brick_count: int = 0
 
 func _ready() -> void:
-	# Connect to game state
+	print("BrickSpawner: Ready for level ", GameState.current_level)
 	GameState.phase_changed.connect(_on_game_state_changed)
 	
 	if GameState.current_phase == GameState.Phase.GAMEPLAY:
@@ -30,24 +32,14 @@ func spawn_bricks():
 	
 	brick_count = 0
 	
-	# Get level definition based on current level
-	var level_def = _get_level_definition(GameState.current_level)
-	spawn_from_definition(level_def)
+	# Get brick layout from GameData
+	var brick_layout = GameData.get_brick_layout(GameState.current_level)
+	if brick_layout.is_empty():
+		print("Warning: No brick layout for level ", GameState.current_level)
+		return
 	
+	spawn_from_definition(brick_layout)
 	print("BrickSpawner: Spawned ", brick_count, " bricks")
-
-func _get_level_definition(level: int) -> Array:
-	match level:
-		1: return LevelDefinitions.level_1
-		2: return LevelDefinitions.level_2
-		3: return LevelDefinitions.level_3
-		4: return LevelDefinitions.level_4
-		5: return LevelDefinitions.level_5
-		6: return LevelDefinitions.level_6
-		7: return LevelDefinitions.level_7
-		8: return LevelDefinitions.level_8
-		9: return LevelDefinitions.level_9
-		_: return LevelDefinitions.level_1
 
 func spawn_from_definition(level_definition: Array) -> void:
 	var test_brick: Brick = brick_scene.instantiate()
@@ -80,11 +72,11 @@ func spawn_from_definition(level_definition: Array) -> void:
 
 			brick_count += 1
 
-func on_brick_destroyed() -> void:
+func on_brick_destroyed():
 	brick_count -= 1
 	print("Bricks remaining: ", brick_count)
 	
 	if brick_count == 0:
-		print("All bricks destroyed! Ending level...")
+		print("All bricks destroyed!")
 		ball.stop()
-		GameFlowManager.end_level()
+		level_completed.emit()

@@ -1,86 +1,52 @@
-extends Node2D
+extends Node
 
-signal climax_finished
+signal animation_completed
 
-# UI References
-@onready var anim: AnimationPlayer = $Node2D/anim
-@onready var progress_bar: ProgressBar = $ProgressBar
-@onready var instruction_label: Label = $InstructionLabel
+var current_animation_scene: Node = null
 
-# Game State
-var climax_played := false
-var hold_timer := 0.0
-var is_holding := false
+func play_level_animation(level: int):
+	var animation_path = GameData.get_animation_scene(level)
+	
+	if animation_path.is_empty():
+		print("No animation for level ", level)
+		animation_completed.emit()
+		return
+	
+	print("Loading animation: ", animation_path)
+	get_tree().change_scene_to_file(animation_path)
+	
+	# Wait for scene to load
+	await get_tree().process_frame
+	await get_tree().process_frame
+	
+	var scene = get_tree().current_scene
+	if not scene:
+		animation_completed.emit()
+		return
+	
+	# Wait for animation to complete
+	await get_tree().create_timer(12.0).timeout
+	
+	animation_completed.emit()
 
-# Constants
-const HOLD_DURATION := 3.0
-const MIN_SPEED := 1.0
-const MAX_SPEED := 3.0
-
-func _ready():
-	# Setup animation
+func _play_animation_sequence():
+	# Find AnimationPlayer
+	var anim = current_animation_scene.get_node_or_null("Node2D/anim")
+	if not anim:
+		animation_completed.emit()
+		return
+	
+	# Play lewdscene for 10 seconds
 	anim.play("lewdscene")
-	anim.speed_scale = MIN_SPEED
+	await get_tree().create_timer(10.0).timeout
 	
-	# Setup UI
-	progress_bar.visible = false
-	progress_bar.max_value = HOLD_DURATION
-	instruction_label.text = "Hold to speed up"
-
-func _input(event):
-	if event is InputEventMouseButton and not climax_played:
-		_handle_mouse_input(event)
-
-func _handle_mouse_input(event: InputEventMouseButton):
-	if event.button_index == MOUSE_BUTTON_LEFT:
-		if event.pressed:
-			_start_holding()
-		else:
-			_stop_holding()
-
-func _start_holding():
-	is_holding = true
-	hold_timer = 0.0
-	progress_bar.visible = true
-	progress_bar.value = 0
-	instruction_label.text = "Keep holding..."
-
-func _stop_holding():
-	is_holding = false
-	hold_timer = 0.0
-	anim.speed_scale = MIN_SPEED
-	progress_bar.visible = false
-	if not climax_played:
-		instruction_label.text = "Hold to speed up"
-
-func _process(delta):
-	if is_holding and not climax_played:
-		_update_hold_progress(delta)
-
-func _update_hold_progress(delta: float):
-	hold_timer += delta
-	var progress = hold_timer / HOLD_DURATION
-	anim.speed_scale = MIN_SPEED + (MAX_SPEED - MIN_SPEED) * progress
-	progress_bar.value = hold_timer
+	# Play climax
+	if anim.has_animation("climax"):
+		anim.stop()
+		anim.play("climax")
+		await anim.animation_finished
 	
-	if hold_timer >= HOLD_DURATION:
-		_play_climax()
-
-func _play_climax():
-	climax_played = true
-	is_holding = false
-	anim.speed_scale = MIN_SPEED
-	anim.stop()
-	anim.play("climax")
-	progress_bar.visible = false
-	instruction_label.visible = false
+	# Clean up
+	current_animation_scene.queue_free()
+	current_animation_scene = null
 	
-	# Wait for climax to finish
-	await anim.animation_finished
-	
-	# Signal completion
-	climax_finished.emit()
-
-# Helper for animation_manager
-func get_climax_played() -> bool:
-	return climax_played

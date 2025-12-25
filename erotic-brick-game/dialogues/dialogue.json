@@ -2,36 +2,25 @@
   "levels": {
 	"1": {
 	  "character": "fleurdelis",
-	  "intro": [
-		"Welcome to my arcade~",
-		"Break the bricks if you dare."
+	  "bricks": [
+		[1, 1],
+
 	  ],
-	  "outro": [
-		"Impressive.",
-		"But can you survive the next round?"
-	  ]
+	  "intro": ["Welcome to my arcade~", "Break the bricks if you dare."],
+	  "outro": ["Impressive.", "But can you survive the next round?"],
+	  "animation": "res://lewds/lewdscenes/fleurdelis_ls.tscn"
 	},
 	"2": {
 	  "character": "rosalyn",
-	  "intro": [
-		"Stand firm.",
-		"Your reflexes will be tested."
+	  "bricks": [
+		[2, 2, 2, 2],
+		[2, 3, 3, 2],
+		[2, 2, 2, 2],
+		[1, 1, 1, 1]
 	  ],
-	  "outro": [
-		"You fought well.",
-		"The challenge increases."
-	  ]
-	},
-	"3": {
-	  "character": "dahlia",
-	  "intro": [
-		"Let's see what you're made of.",
-		"Don't disappoint me."
-	  ],
-	  "outro": [
-		"Not bad at all.",
-		"Ready for more?"
-	  ]
+	  "intro": ["Stand firm.", "Your reflexes will be tested."],
+	  "outro": ["You fought well.", "The challenge increases."],
+	  "animation": "res://lewds/lewdscenes/rosalyn_ls.tscn"
 	}
   }
 }

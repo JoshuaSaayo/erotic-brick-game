@@ -1,41 +1,39 @@
 extends Node
 
 @onready var brick_spawner: BrickSpawner = $BrickSpawner
-@onready var character_sprite: Node2D = $Arcade/CharacterSprite
+@onready var character_container: Node2D = $Arcade/CharacterSprite
+
+var current_character_scene: Node = null
 
 func _ready():
 	print("Game scene loaded for level ", GameState.current_level)
-	
-	# Load character sprite based on level
 	_load_character()
 	
-	# Connect to brick spawner's level_completed signal
 	if brick_spawner:
-		# Make sure the signal exists before connecting
-		if brick_spawner.has_signal("level_completed"):
-			brick_spawner.level_completed.connect(_on_level_completed)
-			print("Connected to brick_spawner.level_completed signal")
-		else:
-			print("ERROR: brick_spawner doesn't have level_completed signal!")
+		brick_spawner.level_completed.connect(_on_level_completed)
 
 func _load_character():
-	var character_name = _get_character_for_level(GameState.current_level)
-	var texture_path = "res://characters/%s.png" % character_name
+	var character_name = GameData.get_character(GameState.current_level)
+	var scene_path = "res://lewds/lewdscenes/%s_ls.tscn" % character_name
 	
-	if ResourceLoader.exists(texture_path):
-		var texture = load(texture_path)
-		character_sprite.texture = texture
+	# Remove previous character
+	if current_character_scene:
+		current_character_scene.queue_free()
+	
+	# Load new character
+	if ResourceLoader.exists(scene_path):
+		var character_scene = load(scene_path).instantiate()
+		character_container.add_child(character_scene)
+		current_character_scene = character_scene
 		print("Loaded character: ", character_name)
+		
+		# Play idle animation if available
+		var anim = character_scene.get_node_or_null("Node2D/anim")
+		if anim and anim.has_animation("idle"):
+			anim.play("idle")
 	else:
-		print("Warning: Character texture not found: ", texture_path)
-
-func _get_character_for_level(level: int) -> String:
-	match level:
-		1: return "fleurdelis"
-		2: return "rosalyn"
-		3: return "dahlia"
-		_: return "fleurdelis"
+		print("Warning: Character scene not found: ", scene_path)
 
 func _on_level_completed():
-	print("Game: Level completed, calling FlowManager.end_level()")
+	print("Level completed, starting outro flow")
 	GameFlowManager.end_level()

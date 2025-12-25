@@ -17,12 +17,10 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-LevelDefinitions="*res://autoload/level_definitions.gd"
 GameState="*res://autoload/game_state.gd"
 DialogueManager="*res://autoload/dialogue_manager.gd"
 GameFlowManager="*res://autoload/game_flow_manager.gd"
-AnimationManager="*res://autoload/animation_manager.gd"
-CharacterManager="*res://autoload/character_manager.gd"
+GameData="*res://autoload/game_data.gd"
 
 [display]
 
