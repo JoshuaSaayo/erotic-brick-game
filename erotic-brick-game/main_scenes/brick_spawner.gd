@@ -77,5 +77,5 @@ func on_brick_destroyed() -> void:
 	
 	if brick_count == 0:
 		print("All bricks destroyed! Ending level...")
-		ball.stop_ball()
+		ball.stop()
 		GameFlowManager.end_level()

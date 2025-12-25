@@ -12,7 +12,6 @@ gravity_scale = 0.0
 sleeping = true
 lock_rotation = true
 script = ExtResource("1_4ca4o")
-speed = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_8s6kt")
