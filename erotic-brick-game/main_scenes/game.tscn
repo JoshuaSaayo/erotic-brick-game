@@ -1,23 +1,30 @@
-[gd_scene load_steps=14 format=3 uid="uid://cy0qqardac6dg"]
+[gd_scene load_steps=13 format=3 uid="uid://cy0qqardac6dg"]
 
 [ext_resource type="PackedScene" uid="uid://dlpvhjkhrb4xu" path="res://main_scenes/HUD.tscn" id="1_is35i"]
 [ext_resource type="PackedScene" uid="uid://daaga543f6yyx" path="res://main_scenes/paddle.tscn" id="1_wwb56"]
 [ext_resource type="PackedScene" uid="uid://e0wijirn4emc" path="res://main_scenes/ball.tscn" id="2_joe7c"]
+[ext_resource type="Texture2D" uid="uid://deent88obxk6f" path="res://assets/backgrounds/screen_1.png" id="3_m3jfi"]
 [ext_resource type="PackedScene" uid="uid://bir24uh2mflix" path="res://main_scenes/wall.tscn" id="3_ofkbr"]
+[ext_resource type="Texture2D" uid="uid://15yiy2sodrvh" path="res://assets/backgrounds/screen_2.png" id="4_gjw5m"]
 [ext_resource type="Script" uid="uid://cxx6euexv7ncx" path="res://main_scenes/brick_spawner.gd" id="4_im5ls"]
 [ext_resource type="PackedScene" uid="uid://xo0l45j5xjih" path="res://main_scenes/death_zone.tscn" id="4_w44n0"]
 [ext_resource type="PackedScene" uid="uid://cpexi8jmmgh2p" path="res://main_scenes/bricks.tscn" id="5_6h35g"]
-[ext_resource type="Texture2D" uid="uid://bpsg4pj0o8di8" path="res://assets/game_assets/speech_bubble.png" id="6_6h35g"]
-[ext_resource type="FontFile" uid="uid://dxuuui8nd1aca" path="res://UI/fonts/VT323-Regular.ttf" id="7_m3jfi"]
 [ext_resource type="PackedScene" uid="uid://c3l552us7rwt5" path="res://lewds/lewdscenes/fleurdelis_level.tscn" id="8_im5ls"]
 [ext_resource type="Texture2D" uid="uid://b8xmlpoboa0oj" path="res://assets/game_assets/arcade.png" id="8_sp4xh"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m3jfi"]
-texture = ExtResource("6_6h35g")
-
-[sub_resource type="LabelSettings" id="LabelSettings_gjw5m"]
-font = ExtResource("7_m3jfi")
-font_size = 32
+[sub_resource type="SpriteFrames" id="SpriteFrames_mf5kq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_m3jfi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gjw5m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="game" type="Node2D"]
 
@@ -32,6 +39,13 @@ position = Vector2(-639, -362)
 [node name="Arcade" type="Sprite2D" parent="Arcade"]
 position = Vector2(192, 0)
 texture = ExtResource("8_sp4xh")
+
+[node name="Screen" type="AnimatedSprite2D" parent="Arcade/Arcade"]
+position = Vector2(29, 19)
+sprite_frames = SubResource("SpriteFrames_mf5kq")
+autoplay = "default"
+frame_progress = 0.866284
+speed_scale = 0.1
 
 [node name="Walls" type="Node2D" parent="Arcade"]
 
@@ -73,21 +87,3 @@ brick_scene = ExtResource("5_6h35g")
 spawn_start = NodePath("../Arcade/Marker2D")
 
 [node name="HUD" parent="." instance=ExtResource("1_is35i")]
-
-[node name="SpeechBubble" type="Panel" parent="."]
-offset_left = -171.0
-offset_top = -334.0
-offset_right = 337.0
-offset_bottom = -150.0
-theme_override_styles/panel = SubResource("StyleBoxTexture_m3jfi")
-
-[node name="Speech" type="Label" parent="SpeechBubble"]
-self_modulate = Color(0, 0, 0, 0.584314)
-layout_mode = 0
-offset_left = 30.0
-offset_top = 30.0
-offset_right = 133.0
-offset_bottom = 63.0
-size_flags_vertical = 0
-text = "Lifes: 3"
-label_settings = SubResource("LabelSettings_gjw5m")
