@@ -53,17 +53,17 @@ func end_level():
 	
 	# 4. Animation/Cutscene
 	GameState.change_phase(GameState.Phase.CUTSCENE)
-	print("GameFlowManager: Playing animation")
+	print("GameFlowManager: Playing interactive animation")
 	
 	var animation_path = GameData.get_animation_scene(GameState.current_level)
 	if animation_path:
-		print("Playing animation: ", animation_path)
+		print("Loading interactive animation: ", animation_path)
 		get_tree().change_scene_to_file(animation_path)
 		
-		# Wait for animation (12 seconds total)
-		await get_tree().create_timer(12.0).timeout
+		# Wait for the animation scene to signal completion
+		# The animation scene should emit a signal when climax is done
+		await _wait_for_animation_completion()
 	else:
-		# No animation, wait a bit
 		await get_tree().create_timer(2.0).timeout
 	
 	# 5. Next level or game complete
@@ -74,6 +74,24 @@ func end_level():
 	else:
 		print("GameFlowManager: Game complete!")
 		game_complete()
+
+func _wait_for_animation_completion():
+	# Wait for scene to load
+	await get_tree().process_frame
+	await get_tree().process_frame
+	
+	var scene = get_tree().current_scene
+	if not scene:
+		return
+	
+	# Check if scene has a completion signal
+	if scene.has_signal("animation_completed"):
+		await scene.animation_completed
+	elif scene.has_signal("climax_finished"):
+		await scene.climax_finished
+	else:
+		# Fallback: wait 15 seconds
+		await get_tree().create_timer(15.0).timeout
 
 # ADD THIS FUNCTION
 func game_complete():
