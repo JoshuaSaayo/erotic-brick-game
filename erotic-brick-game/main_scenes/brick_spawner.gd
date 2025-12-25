@@ -13,7 +13,16 @@ var brick_count: int = 0
 
 func _ready() -> void:
 	spawn_from_definition(LevelDefinitions.level_1)
+	if GameState.current_phase == GameState.Phase.PRE_DIALOGUE:
+		await GameState.phase_changed
+	if GameState.current_phase == GameState.Phase.GAMEPLAY:
+			spawn_bricks()
 
+func spawn_bricks():
+	# Get current level definition
+	var level_def = LevelDefinitions.get_level_definition(GameState.current_level)
+	spawn_from_definition(level_def)
+	
 func spawn_from_definition(level_definition: Array) -> void:
 	# --- Measure brick ---
 	var test_brick: Brick = brick_scene.instantiate()
@@ -46,9 +55,11 @@ func spawn_from_definition(level_definition: Array) -> void:
 			brick.brick_destroyed.connect(on_brick_destroyed)
 
 			brick_count += 1
-
+	print("Bricks spawned: ", brick_count)
+	
 func on_brick_destroyed() -> void:
 	brick_count -= 1
 	if brick_count == 0:
 		ball.stop_ball()
-		LevelDefinitions.current_level += 1
+		# Trigger level end through FlowManager
+		FlowManager.end_level()
