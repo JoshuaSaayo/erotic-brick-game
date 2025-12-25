@@ -1,56 +1,93 @@
-[gd_scene load_steps=9 format=3 uid="uid://cy0qqardac6dg"]
+[gd_scene load_steps=14 format=3 uid="uid://cy0qqardac6dg"]
 
 [ext_resource type="PackedScene" uid="uid://dlpvhjkhrb4xu" path="res://main_scenes/HUD.tscn" id="1_is35i"]
-[ext_resource type="PackedScene" uid="uid://dfsou32drvrg8" path="res://main_scenes/game_display.tscn" id="1_sp4xh"]
 [ext_resource type="PackedScene" uid="uid://daaga543f6yyx" path="res://main_scenes/paddle.tscn" id="1_wwb56"]
 [ext_resource type="PackedScene" uid="uid://e0wijirn4emc" path="res://main_scenes/ball.tscn" id="2_joe7c"]
 [ext_resource type="PackedScene" uid="uid://bir24uh2mflix" path="res://main_scenes/wall.tscn" id="3_ofkbr"]
 [ext_resource type="Script" uid="uid://cxx6euexv7ncx" path="res://main_scenes/brick_spawner.gd" id="4_im5ls"]
 [ext_resource type="PackedScene" uid="uid://xo0l45j5xjih" path="res://main_scenes/death_zone.tscn" id="4_w44n0"]
 [ext_resource type="PackedScene" uid="uid://cpexi8jmmgh2p" path="res://main_scenes/bricks.tscn" id="5_6h35g"]
+[ext_resource type="Texture2D" uid="uid://bpsg4pj0o8di8" path="res://assets/game_assets/speech_bubble.png" id="6_6h35g"]
+[ext_resource type="FontFile" uid="uid://dxuuui8nd1aca" path="res://UI/fonts/VT323-Regular.ttf" id="7_m3jfi"]
+[ext_resource type="PackedScene" uid="uid://c3l552us7rwt5" path="res://lewds/lewdscenes/fleurdelis_level.tscn" id="8_im5ls"]
+[ext_resource type="Texture2D" uid="uid://b8xmlpoboa0oj" path="res://assets/game_assets/arcade.png" id="8_sp4xh"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m3jfi"]
+texture = ExtResource("6_6h35g")
+
+[sub_resource type="LabelSettings" id="LabelSettings_gjw5m"]
+font = ExtResource("7_m3jfi")
+font_size = 32
 
 [node name="game" type="Node2D"]
 
-[node name="game_display" parent="." instance=ExtResource("1_sp4xh")]
-position = Vector2(-1, -2)
+[node name="Arcade" type="Node2D" parent="."]
 
-[node name="BrickSpawner" type="Node" parent="." node_paths=PackedStringArray("spawn_start")]
-script = ExtResource("4_im5ls")
-brick_scene = ExtResource("5_6h35g")
-spawn_start = NodePath("../Marker2D")
+[node name="CharacterSprite" type="Node2D" parent="Arcade"]
+position = Vector2(-1, 1)
 
-[node name="HUD" parent="." instance=ExtResource("1_is35i")]
+[node name="fleurdelis_level" parent="Arcade/CharacterSprite" instance=ExtResource("8_im5ls")]
+position = Vector2(-639, -362)
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Arcade" type="Sprite2D" parent="Arcade"]
+position = Vector2(192, 0)
+texture = ExtResource("8_sp4xh")
 
-[node name="paddle" parent="." instance=ExtResource("1_wwb56")]
-position = Vector2(202, 293)
-collision_layer = 2
+[node name="Walls" type="Node2D" parent="Arcade"]
 
-[node name="ball" parent="." node_paths=PackedStringArray("death_zone", "hud") instance=ExtResource("2_joe7c")]
-position = Vector2(202, 241)
-collision_mask = 14
-death_zone = NodePath("../death_zone")
-hud = NodePath("../HUD")
-
-[node name="Walls" type="Node2D" parent="."]
-
-[node name="Upperwall" parent="Walls" instance=ExtResource("3_ofkbr")]
+[node name="Upperwall" parent="Arcade/Walls" instance=ExtResource("3_ofkbr")]
 position = Vector2(-1, -264)
 collision_layer = 4
 
-[node name="LeftWall" parent="Walls" instance=ExtResource("3_ofkbr")]
+[node name="LeftWall" parent="Arcade/Walls" instance=ExtResource("3_ofkbr")]
 position = Vector2(-144, 260)
 rotation = 1.5708
 collision_layer = 4
 
-[node name="RightWall" parent="Walls" instance=ExtResource("3_ofkbr")]
+[node name="RightWall" parent="Arcade/Walls" instance=ExtResource("3_ofkbr")]
 position = Vector2(561, 260)
 rotation = 1.5708
 collision_layer = 4
 
-[node name="death_zone" parent="." instance=ExtResource("4_w44n0")]
+[node name="death_zone" parent="Arcade" instance=ExtResource("4_w44n0")]
 position = Vector2(-2, 355)
 
-[node name="Marker2D" type="Marker2D" parent="."]
+[node name="Marker2D" type="Marker2D" parent="Arcade"]
 position = Vector2(-6, -156)
+
+[node name="Camera2D" type="Camera2D" parent="Arcade"]
+
+[node name="paddle" parent="Arcade" instance=ExtResource("1_wwb56")]
+position = Vector2(202, 293)
+collision_layer = 2
+
+[node name="ball" parent="Arcade" node_paths=PackedStringArray("death_zone", "hud") instance=ExtResource("2_joe7c")]
+position = Vector2(202, 241)
+collision_mask = 14
+death_zone = NodePath("../death_zone")
+hud = NodePath("../../HUD")
+
+[node name="BrickSpawner" type="Node" parent="." node_paths=PackedStringArray("spawn_start")]
+script = ExtResource("4_im5ls")
+brick_scene = ExtResource("5_6h35g")
+spawn_start = NodePath("../Arcade/Marker2D")
+
+[node name="HUD" parent="." instance=ExtResource("1_is35i")]
+
+[node name="SpeechBubble" type="Panel" parent="."]
+offset_left = -171.0
+offset_top = -334.0
+offset_right = 337.0
+offset_bottom = -150.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_m3jfi")
+
+[node name="Speech" type="Label" parent="SpeechBubble"]
+self_modulate = Color(0, 0, 0, 0.584314)
+layout_mode = 0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 133.0
+offset_bottom = 63.0
+size_flags_vertical = 0
+text = "Lifes: 3"
+label_settings = SubResource("LabelSettings_gjw5m")

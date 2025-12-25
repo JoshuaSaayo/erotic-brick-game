@@ -1,0 +1,10 @@
+extends Node
+
+enum GameState {
+	MENU,
+	PRE_DIALOGUE,
+	GAMEPLAY,
+	POST_DIALOGUE,
+	CUTSCENE,
+	LEVEL_COMPLETE
+}

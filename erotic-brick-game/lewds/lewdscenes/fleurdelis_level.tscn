@@ -1,6 +1,7 @@
-[gd_scene load_steps=101 format=3 uid="uid://c3l552us7rwt5"]
+[gd_scene load_steps=102 format=3 uid="uid://c3l552us7rwt5"]
 
 [ext_resource type="Texture2D" uid="uid://b15kx8f3rq2bw" path="res://lewds/lewd_assets/fleurdelis_level/parts/torso.png" id="1_avl45"]
+[ext_resource type="Texture2D" uid="uid://ch3dnchwf8qy2" path="res://assets/backgrounds/map_1.png" id="1_wdimo"]
 [ext_resource type="Texture2D" uid="uid://d2jqsaps0jfxp" path="res://lewds/lewd_assets/fleurdelis_level/back_hair/back_hair_00.png" id="2_4o5jf"]
 [ext_resource type="Texture2D" uid="uid://cvpf10jxmhumu" path="res://lewds/lewd_assets/fleurdelis_level/parts/face.png" id="2_ah6j2"]
 [ext_resource type="Texture2D" uid="uid://cg21tk6avdygs" path="res://lewds/lewd_assets/fleurdelis_level/parts/template.png" id="3_ejptj"]
@@ -340,7 +341,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(258, 430), Vector2(258, 435)]
+"values": [Vector2(214, 438), Vector2(214, 431)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -598,6 +599,10 @@ _data = {
 [node name="fleurdelis_level" type="Node2D"]
 
 [node name="Node2D" type="Node2D" parent="."]
+
+[node name="Map1" type="Sprite2D" parent="Node2D"]
+position = Vector2(640, 361)
+texture = ExtResource("1_wdimo")
 
 [node name="Torso" type="Sprite2D" parent="Node2D"]
 position = Vector2(258, 430)

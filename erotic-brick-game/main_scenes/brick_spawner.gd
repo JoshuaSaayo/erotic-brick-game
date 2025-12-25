@@ -5,8 +5,9 @@ class_name BrickSpawner
 @export var margin: Vector2 = Vector2(8, 8)
 @export var spawn_start: Marker2D
 
-@onready var ball: Ball = $"../../ball"
-@onready var hud: HUD = $"../../HUD"
+@onready var ball: Ball = $"../Arcade/ball"
+@onready var hud: HUD = $"../HUD"
+
 
 var brick_count: int = 0
 

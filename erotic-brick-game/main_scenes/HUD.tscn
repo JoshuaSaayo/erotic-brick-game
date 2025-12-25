@@ -10,8 +10,9 @@ font_size = 32
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0tffd"]
 bg_color = Color(1, 0.101999, 0.828465, 1)
 
-[node name="HUD" type="CanvasLayer"]
+[node name="HUD" type="CanvasLayer" node_paths=PackedStringArray("lifes_label")]
 script = ExtResource("1_0tffd")
+lifes_label = NodePath("MarginContainer/HBoxContainer/LifesLabel")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -29,7 +30,6 @@ layout_mode = 2
 size_flags_horizontal = 8
 
 [node name="LifesLabel" type="Label" parent="MarginContainer/HBoxContainer"]
-unique_name_in_owner = true
 self_modulate = Color(0, 0, 0, 0.584314)
 layout_mode = 2
 size_flags_vertical = 0

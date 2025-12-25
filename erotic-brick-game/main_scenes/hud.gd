@@ -2,7 +2,7 @@ extends CanvasLayer
 
 class_name HUD
 
-@onready var lifes_label: Label = %LifesLabel
+@export var lifes_label: Label
 @onready var game_lost_container: CenterContainer = $GameLostContainer
 
 func set_lifes(lifes: int):

@@ -1,0 +1,25 @@
+{
+  "levels": {
+	"1": {
+	  "character": "witch",
+	  "intro": [
+		"Welcome to my arcade~",
+		"Break the bricks if you dare."
+	  ],
+	  "outro": [
+		"Impressive.",
+		"But can you survive the next round?"
+	  ]
+	},
+	"2": {
+	  "character": "knight",
+	  "intro": [
+		"Stand firm.",
+		"Your reflexes will be tested."
+	  ],
+	  "outro": [
+		"You fought well."
+	  ]
+	}
+  }
+}
