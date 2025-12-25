@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://cy0qqardac6dg"]
+[gd_scene load_steps=14 format=3 uid="uid://cy0qqardac6dg"]
 
+[ext_resource type="Script" uid="uid://b8n0rt5pe6s3w" path="res://main_scenes/game.gd" id="1_gjw5m"]
 [ext_resource type="PackedScene" uid="uid://dlpvhjkhrb4xu" path="res://main_scenes/HUD.tscn" id="1_is35i"]
 [ext_resource type="PackedScene" uid="uid://daaga543f6yyx" path="res://main_scenes/paddle.tscn" id="1_wwb56"]
 [ext_resource type="PackedScene" uid="uid://e0wijirn4emc" path="res://main_scenes/ball.tscn" id="2_joe7c"]
@@ -27,6 +28,7 @@ animations = [{
 }]
 
 [node name="game" type="Node2D"]
+script = ExtResource("1_gjw5m")
 
 [node name="HUD" parent="." instance=ExtResource("1_is35i")]
 

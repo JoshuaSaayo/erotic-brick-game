@@ -9,35 +9,27 @@ var animation_scenes := {
 
 func play_level_animation(level: int) -> void:
 	if not animation_scenes.has(level):
-		# Skip animation if not found
 		print("No animation for level ", level)
 		animation_completed.emit()
 		return
 	
 	var scene_path: String = animation_scenes[level]
-	print("Loading animation: ", scene_path)
+	print("AnimationManager: Loading ", scene_path)
 	
-	# Load the animation scene
 	get_tree().change_scene_to_file(scene_path)
 	
-	# Wait for scene to load
 	await get_tree().process_frame
 	await get_tree().process_frame
 	
-	# Get the current scene
 	var scene = get_tree().current_scene
 	if not scene:
-		print("Failed to load animation scene")
 		animation_completed.emit()
 		return
 	
-	print("Animation scene loaded: ", scene.name)
+	# Wait for animation to complete (simplified)
+	await get_tree().create_timer(12.0).timeout
 	
-	# Wait for animation to complete
-	# We'll use a simple timer-based approach for now
-	await get_tree().create_timer(12.0).timeout  # Wait 12 seconds total
-	
-	print("Animation time finished, moving to next level")
+	print("AnimationManager: Animation completed")
 	animation_completed.emit()
 
 func _on_climax_finished(scene: Node2D):

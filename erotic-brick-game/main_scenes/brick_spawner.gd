@@ -13,32 +13,41 @@ func _ready() -> void:
 	# Connect to game state
 	GameState.phase_changed.connect(_on_game_state_changed)
 	
-	# Start spawning when gameplay begins
 	if GameState.current_phase == GameState.Phase.GAMEPLAY:
 		spawn_bricks()
-	elif GameState.current_phase == GameState.Phase.PRE_DIALOGUE:
-		# Wait for dialogue to finish
-		await GameState.phase_changed
-		if GameState.current_phase == GameState.Phase.GAMEPLAY:
-			spawn_bricks()
 
 func _on_game_state_changed(new_phase: GameState.Phase):
 	if new_phase == GameState.Phase.GAMEPLAY:
 		spawn_bricks()
 
 func spawn_bricks():
-	# Clear any existing bricks
+	print("BrickSpawner: Spawning bricks for level ", GameState.current_level)
+	
+	# Clear existing bricks
 	for child in get_children():
 		if child is Brick:
 			child.queue_free()
 	
 	brick_count = 0
 	
-	# Get current level definition
-	var level_def = LevelDefinitions.get_level_definition(GameState.current_level)
+	# Get level definition based on current level
+	var level_def = _get_level_definition(GameState.current_level)
 	spawn_from_definition(level_def)
 	
-	print("Spawned ", brick_count, " bricks for level ", GameState.current_level)
+	print("BrickSpawner: Spawned ", brick_count, " bricks")
+
+func _get_level_definition(level: int) -> Array:
+	match level:
+		1: return LevelDefinitions.level_1
+		2: return LevelDefinitions.level_2
+		3: return LevelDefinitions.level_3
+		4: return LevelDefinitions.level_4
+		5: return LevelDefinitions.level_5
+		6: return LevelDefinitions.level_6
+		7: return LevelDefinitions.level_7
+		8: return LevelDefinitions.level_8
+		9: return LevelDefinitions.level_9
+		_: return LevelDefinitions.level_1
 
 func spawn_from_definition(level_definition: Array) -> void:
 	var test_brick: Brick = brick_scene.instantiate()
