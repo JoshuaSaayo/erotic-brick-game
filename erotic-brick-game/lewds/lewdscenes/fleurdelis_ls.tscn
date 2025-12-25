@@ -1,5 +1,6 @@
-[gd_scene load_steps=186 format=3 uid="uid://cbno7owsue6qj"]
+[gd_scene load_steps=189 format=3 uid="uid://cbno7owsue6qj"]
 
+[ext_resource type="Script" uid="uid://dkkvfcu7xl341" path="res://main_scenes/animation_controller.gd" id="1_7ljww"]
 [ext_resource type="Texture2D" uid="uid://twvxijqw27dy" path="res://lewds/lewd_assets/fleurdelis_ls/torso/torso_00.png" id="2_6yav6"]
 [ext_resource type="Texture2D" uid="uid://dxco20hify1by" path="res://lewds/lewd_assets/fleurdelis_ls/parts/head.png" id="2_hhvbw"]
 [ext_resource type="Texture2D" uid="uid://p8kak43q2nx3" path="res://lewds/lewd_assets/fleurdelis_ls/parts/mouth.png" id="3_y11y8"]
@@ -180,6 +181,7 @@
 [ext_resource type="Texture2D" uid="uid://l1022sl76nv7" path="res://lewds/lewd_assets/fleurdelis_ls/l_thigh/l_thigh_17.png" id="155_btden"]
 [ext_resource type="Texture2D" uid="uid://0ejdvqvttk60" path="res://lewds/lewd_assets/fleurdelis_ls/l_thigh/l_thigh_18.png" id="156_m6tvi"]
 [ext_resource type="Texture2D" uid="uid://bm21bk36sqs45" path="res://lewds/lewd_assets/fleurdelis_ls/l_thigh/l_thigh_19.png" id="157_8orkv"]
+[ext_resource type="FontFile" uid="uid://dxuuui8nd1aca" path="res://UI/fonts/VT323-Regular.ttf" id="182_hqwi3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1t2v6"]
 animations = [{
@@ -1387,7 +1389,12 @@ _data = {
 &"lewdscene": SubResource("Animation_6yav6")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_138j5"]
+font = ExtResource("182_hqwi3")
+font_size = 32
+
 [node name="fleurdelis_ls" type="Node2D"]
+script = ExtResource("1_7ljww")
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -1530,3 +1537,19 @@ visible = false
 self_modulate = Color(1, 1, 0.239216, 0.341176)
 position = Vector2(632, 400)
 texture = ExtResource("26_ooc6b")
+
+[node name="InstructionLabel" type="Label" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+offset_left = 30.0
+offset_top = 61.0
+offset_right = 171.0
+offset_bottom = 94.0
+size_flags_vertical = 0
+text = "lorem ipsum"
+label_settings = SubResource("LabelSettings_138j5")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = 1245.0
+offset_top = 672.0
+offset_right = 1249.0
+offset_bottom = 699.0
