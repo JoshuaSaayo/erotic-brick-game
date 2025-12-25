@@ -8,6 +8,7 @@ signal life_lost
 @export var death_zone: DeathZone
 @export var hud: HUD
 
+var is_launched: bool = false
 var start_position: Vector2
 var speed_up_factor := 1.05
 var is_active: bool = false
@@ -48,12 +49,17 @@ func _adjust_collision_angle(collider):
 	velocity = velocity.normalized() * clampf(velocity.length(), ball_speed * 0.8, ball_speed * 2.5)
 
 func launch() -> void:
+	if is_launched:  # NEW: Prevent relaunching if already launched
+		return
+	
 	global_position = start_position
 	is_active = true
+	is_launched = true  # NEW: Mark as launched
 	velocity = Vector2(randf_range(-1.0, 1.0), randf_range(-1.0, -0.1)).normalized() * ball_speed
 
 func stop() -> void:
 	is_active = false
+	is_launched = false  # NEW: Reset launch state when stopped
 	velocity = Vector2.ZERO
 
 func on_life_lost():
@@ -65,12 +71,14 @@ func on_life_lost():
 		position = start_position
 		velocity = Vector2.ZERO
 		is_active = false
+		is_launched = false  # NEW: Reset launch state on life lost
 		hud.set_lifes(lifes)
 
 func _on_game_state_changed(new_phase: GameState.Phase):
 	match new_phase:
 		GameState.Phase.GAMEPLAY:
-			await get_tree().create_timer(0.5).timeout
-			launch()
+			# REMOVED auto-launch: await get_tree().create_timer(0.5).timeout
+			# launch()  # Don't auto-launch anymore
+			pass
 		GameState.Phase.POST_DIALOGUE, GameState.Phase.CUTSCENE:
 			stop()
