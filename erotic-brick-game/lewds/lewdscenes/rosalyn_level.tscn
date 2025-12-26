@@ -98,53 +98,6 @@
 [ext_resource type="Texture2D" uid="uid://bh58yxrsas67c" path="res://lewds/lewd_assets/rosalyn_level/back_hair/back_hair_18.png" id="94_7r160"]
 [ext_resource type="Texture2D" uid="uid://c057fgphtrwns" path="res://lewds/lewd_assets/rosalyn_level/back_hair/back_hair_19.png" id="95_e85ki"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_o40b3"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("18_klajt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_klajt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_klajt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_klajt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_klajt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_klajt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_klajt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_klajt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_klajt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_klajt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_klajt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_klajt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_f1nap")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
 [sub_resource type="Animation" id="Animation_ptq5o"]
 length = 0.001
 tracks/0/type = "value"
@@ -777,7 +730,62 @@ _data = {
 &"pose_2": SubResource("Animation_518kn")
 }
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_o40b3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_klajt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_klajt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_klajt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_klajt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_klajt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_klajt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_klajt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_klajt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_klajt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_klajt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_klajt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_klajt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_f1nap")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="rosalyn_level" type="Node2D"]
+
+[node name="anim" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Node2D")
+libraries = {
+&"": SubResource("AnimationLibrary_o40b3")
+}
+autoplay = "pose_1"
+speed_scale = 0.5
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -871,13 +879,6 @@ texture = ExtResource("18_ywbl2")
 [node name="Hat" type="Sprite2D" parent="Node2D/Torso/Head"]
 position = Vector2(35, -113)
 texture = ExtResource("9_umiu7")
-
-[node name="anim" type="AnimationPlayer" parent="Node2D"]
-libraries = {
-&"": SubResource("AnimationLibrary_o40b3")
-}
-autoplay = "pose_1"
-speed_scale = 0.5
 
 [node name="Template" type="Sprite2D" parent="."]
 visible = false

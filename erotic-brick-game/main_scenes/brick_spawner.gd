@@ -2,6 +2,7 @@ extends Node
 class_name BrickSpawner
 
 signal level_completed
+signal bricks_destroyed(count: int, total: int)  # NEW: Signal for progress
 
 @export var brick_scene: PackedScene
 @export var margin: Vector2 = Vector2(8, 8)
@@ -10,6 +11,8 @@ signal level_completed
 @onready var ball: Ball = $"../Arcade/ball"
 
 var brick_count: int = 0
+var destroyed_count: int = 0  # NEW: Track destroyed bricks
+var half_bricks_destroyed: bool = false  # NEW: Track if half are destroyed
 
 func _ready() -> void:
 	print("BrickSpawner: Ready for level ", GameState.current_level)
@@ -68,13 +71,25 @@ func spawn_from_definition(level_definition: Array) -> void:
 			var y: float = start_y + i * (brick_size.y + margin.y)
 
 			brick.global_position = Vector2(x, y)
-			brick.brick_destroyed.connect(on_brick_destroyed)
+			brick.brick_destroyed.connect(_on_brick_destroyed)
 
 			brick_count += 1
 
-func on_brick_destroyed():
+func _on_brick_destroyed():
+	destroyed_count += 1
 	brick_count -= 1
-	print("Bricks remaining: ", brick_count)
+	
+	print("Bricks destroyed: ", destroyed_count, "/", destroyed_count + brick_count)
+	
+	# Emit progress signal
+	bricks_destroyed.emit(destroyed_count, destroyed_count + brick_count)
+	
+	# Check if half bricks are destroyed
+	if not half_bricks_destroyed and destroyed_count >= (destroyed_count + brick_count) / 2:
+		half_bricks_destroyed = true
+		print("Half of bricks destroyed! Triggering character reaction")
+		# Signal for character reaction
+		get_tree().call_group("character", "on_half_bricks_destroyed")
 	
 	if brick_count == 0:
 		print("All bricks destroyed!")

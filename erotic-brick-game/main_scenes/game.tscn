@@ -35,7 +35,8 @@ script = ExtResource("1_gjw5m")
 position = Vector2(640, 360)
 
 [node name="CharacterSprite" type="Node2D" parent="Arcade"]
-position = Vector2(-640, -360)
+position = Vector2(-859, -655)
+scale = Vector2(0.7, 0.7)
 
 [node name="Arcade" type="Sprite2D" parent="Arcade"]
 position = Vector2(192, 0)
