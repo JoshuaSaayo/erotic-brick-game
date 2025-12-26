@@ -1,0 +1,101 @@
+{ "skeleton": { "images": "C:/Users/Joshua PC/OneDrive/Desktop/parts/" },
+"PhotoshopToSpine": { "scale": 1, "padding": 1, "trim": true },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "BG", "bone": "root", "attachment": "BG" },
+	{ "name": "Layer51", "bone": "root", "attachment": "Layer51" },
+	{ "name": "Layer50", "bone": "root", "attachment": "Layer50" },
+	{ "name": "back_hair", "bone": "root", "attachment": "back_hair" },
+	{ "name": "boob", "bone": "root", "attachment": "boob" },
+	{ "name": "b_hand", "bone": "root", "attachment": "b_hand" },
+	{ "name": "torso", "bone": "root", "attachment": "torso" },
+	{ "name": "mc_torso", "bone": "root", "attachment": "mc_torso" },
+	{ "name": "dick", "bone": "root", "attachment": "dick" },
+	{ "name": "cum2", "bone": "root", "attachment": "cum2" },
+	{ "name": "mc_thigh", "bone": "root", "attachment": "mc_thigh" },
+	{ "name": "f_thigh", "bone": "root", "attachment": "f_thigh" },
+	{ "name": "cum1", "bone": "root", "attachment": "cum1" },
+	{ "name": "tail", "bone": "root", "attachment": "tail" },
+	{ "name": "head", "bone": "root", "attachment": "head" },
+	{ "name": "f_shoulder", "bone": "root", "attachment": "f_shoulder" },
+	{ "name": "c_eye", "bone": "root", "attachment": "c_eye" },
+	{ "name": "o_eye", "bone": "root", "attachment": "o_eye" },
+	{ "name": "glasses", "bone": "root", "attachment": "glasses" },
+	{ "name": "ear", "bone": "root", "attachment": "ear" },
+	{ "name": "bangs", "bone": "root", "attachment": "bangs" },
+	{ "name": "clip", "bone": "root", "attachment": "clip" }
+],
+"skins": {
+	"default": {
+		"BG": {
+			"BG": { "x": 700, "y": -500, "width": 1402, "height": 1002 }
+		},
+		"Layer51": {
+			"Layer51": { "x": 700, "y": -500, "width": 1402, "height": 1002 }
+		},
+		"Layer50": {
+			"Layer50": { "x": 936, "y": -616.5, "width": 930, "height": 769 }
+		},
+		"back_hair": {
+			"back_hair": { "x": 649, "y": -515.5, "width": 1042, "height": 837 }
+		},
+		"boob": {
+			"boob": { "x": 587.5, "y": -784.5, "width": 315, "height": 329 }
+		},
+		"b_hand": {
+			"b_hand": { "x": 902, "y": -884, "width": 138, "height": 172 }
+		},
+		"torso": {
+			"torso": { "x": 849, "y": -655.5, "width": 1104, "height": 577 }
+		},
+		"mc_torso": {
+			"mc_torso": { "x": 1166.5, "y": -316, "width": 469, "height": 634 }
+		},
+		"dick": {
+			"dick": { "x": 1246, "y": -662, "width": 294, "height": 232 }
+		},
+		"cum2": {
+			"cum2": { "x": 1303, "y": -625.5, "width": 114, "height": 137 }
+		},
+		"mc_thigh": {
+			"mc_thigh": { "x": 1359.5, "y": -773, "width": 83, "height": 456 }
+		},
+		"f_thigh": {
+			"f_thigh": { "x": 1103, "y": -759.5, "width": 488, "height": 483 }
+		},
+		"cum1": {
+			"cum1": { "x": 1177.5, "y": -437.5, "width": 101, "height": 175 }
+		},
+		"tail": {
+			"tail": { "x": 937, "y": -388, "width": 320, "height": 508 }
+		},
+		"head": {
+			"head": { "x": 275.5, "y": -417.5, "width": 223, "height": 339 }
+		},
+		"f_shoulder": {
+			"f_shoulder": { "x": 570, "y": -762.5, "width": 434, "height": 477 }
+		},
+		"c_eye": {
+			"c_eye": { "x": 280, "y": -439.5, "width": 182, "height": 55 }
+		},
+		"o_eye": {
+			"o_eye": { "x": 265.5, "y": -438.5, "width": 113, "height": 43 }
+		},
+		"glasses": {
+			"glasses": { "x": 229, "y": -443.5, "width": 84, "height": 97 }
+		},
+		"ear": {
+			"ear": { "x": 287.5, "y": -185.5, "width": 133, "height": 173 }
+		},
+		"bangs": {
+			"bangs": { "x": 263, "y": -406, "width": 372, "height": 498 }
+		},
+		"clip": {
+			"clip": { "x": 230, "y": -244, "width": 108, "height": 100 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}
