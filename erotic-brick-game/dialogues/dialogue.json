@@ -7,8 +7,15 @@
 		[1, 1],
 
 	  ],
-	  "intro": ["Welcome to my arcade~", "Break the bricks if you dare."],
-	  "outro": ["Impressive.", "But can you survive the next round?"],
+	  "intro": 
+		[
+			"Welcome to my arcade <3", 
+			"Break the bricks if you dare.",
+			"This magical arcade can turn anyone, including me",
+			"If you desire to grope my boobs and eat my pussy, it is your chance <3"],
+	  "outro": [
+			"Ahh I feel so warm in my body.", 
+			"Come to my special room, I have wonderful rewards for you"],
 	  "animation": "res://lewds/lewdscenes/fleurdelis_ls.tscn"
 	},
 	"2": {
@@ -17,19 +24,31 @@
 	  "bricks": [
 		[1, 1],
 	  ],
-	  "intro": ["Stand firm.", "Your reflexes will be tested."],
-	  "outro": ["You fought well.", "The challenge increases."],
-	  "animation": "res://lewds/lewdscenes/rosalyn_ls.tscn"
+	  "intro": [
+			"Hiii boy, did you enjoyed Fleurdelis's pussy?", 
+			"My turn now, her pussy might be good but my mouth can suck your cock hard"],
+	  "outro": [
+			"ugh fuck~ I am fully naked now, I can't control myself",
+			"Show me that dick and fill my mouth"
+			],
+	  "animation": "res://lewds/lewdscenes/fleurdelis_ls.tscn"
 	},
 	"3": {
 	  "character": "shioriko",
-	  "character_scene": "res://characters/dahlia_level.tscn",
+	  "character_scene": "res://characters/shioriko_level.tscn",
 	  "bricks": [
 		[1, 1],
 	  ],
-	  "intro": ["Let's see what you're made of.", "Don't disappoint me."],
-	  "outro": ["Not bad at all.", "Ready for more?"],
-	  "animation": "res://lewds/lewdscenes/dahlia_ls.tscn"
+	  "intro": [
+			"Nyaa, I wanna have fun next",
+			"Have you taste cat's pussy?"
+			],
+	  "outro": [
+			"Mister, why did you finish it fast?",
+			"Are you so turned on me? Please me gentle",
+			"This cat's body is not meant for huge cock"
+			],
+	  "animation": "res://lewds/lewdscenes/fleurdelis_ls.tscn"
 	}
   }
 }
