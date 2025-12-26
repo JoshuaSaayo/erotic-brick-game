@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dkkvfcu7xl341" path="res://main_scenes/animation_controller.gd" id="1_7ljww"]
 [ext_resource type="Texture2D" uid="uid://twvxijqw27dy" path="res://lewds/lewd_assets/fleurdelis_ls/torso/torso_00.png" id="2_6yav6"]
 [ext_resource type="Texture2D" uid="uid://dxco20hify1by" path="res://lewds/lewd_assets/fleurdelis_ls/parts/head.png" id="2_hhvbw"]
+[ext_resource type="Texture2D" uid="uid://dowhrrppeswdm" path="res://lewds/lewd_assets/fleurdelis_ls/parts/bg.png" id="2_hqwi3"]
 [ext_resource type="Texture2D" uid="uid://p8kak43q2nx3" path="res://lewds/lewd_assets/fleurdelis_ls/parts/mouth.png" id="3_y11y8"]
 [ext_resource type="Texture2D" uid="uid://8t8kcsuvpnr0" path="res://lewds/lewd_assets/fleurdelis_ls/parts/glasses.png" id="4_8xxbx"]
 [ext_resource type="Texture2D" uid="uid://bdpi3mjvsb7fq" path="res://lewds/lewd_assets/fleurdelis_ls/back_hair/back_hair_00.png" id="5_acuh8"]
@@ -15,7 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://dgn8f3lqula5p" path="res://lewds/lewd_assets/fleurdelis_ls/parts/hand.png" id="14_3wbi3"]
 [ext_resource type="Texture2D" uid="uid://cik4rbjois56v" path="res://lewds/lewd_assets/fleurdelis_ls/bangs/bangs_00.png" id="15_5ub7e"]
 [ext_resource type="Texture2D" uid="uid://bde7w08ipmr8a" path="res://lewds/lewd_assets/fleurdelis_ls/parts/hat.png" id="15_kg6xq"]
-[ext_resource type="Texture2D" uid="uid://nptrse8h81nn" path="res://lewds/lewd_assets/fleurdelis_ls/parts/Layer22.png" id="16_nndsg"]
 [ext_resource type="Texture2D" uid="uid://b7r3xtqhj34er" path="res://lewds/lewd_assets/fleurdelis_ls/parts/l_arm.png" id="17_28uhs"]
 [ext_resource type="Texture2D" uid="uid://dsr75c34nn548" path="res://lewds/lewd_assets/fleurdelis_ls/parts/l_shoudler.png" id="18_5avgv"]
 [ext_resource type="Texture2D" uid="uid://b3286557s4ujp" path="res://lewds/lewd_assets/fleurdelis_ls/l_sleeve/l_sleeve_00.png" id="18_acuh8"]
@@ -1400,7 +1400,7 @@ script = ExtResource("1_7ljww")
 
 [node name="Layer22" type="Sprite2D" parent="Node2D"]
 position = Vector2(634, 401)
-texture = ExtResource("16_nndsg")
+texture = ExtResource("2_hqwi3")
 
 [node name="Torso" type="Sprite2D" parent="Node2D"]
 position = Vector2(517, 526)
