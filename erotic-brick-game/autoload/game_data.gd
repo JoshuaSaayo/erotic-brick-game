@@ -23,5 +23,8 @@ func get_brick_layout(level: int) -> Array:
 func get_character(level: int) -> String:
 	return get_level_data(level).get("character", "fleurdelis")
 
+func get_character_scene(level: int) -> String:
+	return get_level_data(level).get("character_scene", "res://characters/fleurdelis_level.tscn")
+
 func get_animation_scene(level: int) -> String:
 	return get_level_data(level).get("animation", "")

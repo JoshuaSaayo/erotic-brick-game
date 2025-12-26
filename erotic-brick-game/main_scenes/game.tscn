@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cy0qqardac6dg"]
+[gd_scene load_steps=13 format=3 uid="uid://cy0qqardac6dg"]
 
 [ext_resource type="Script" uid="uid://b8n0rt5pe6s3w" path="res://main_scenes/game.gd" id="1_gjw5m"]
 [ext_resource type="PackedScene" uid="uid://dlpvhjkhrb4xu" path="res://main_scenes/HUD.tscn" id="1_is35i"]
@@ -10,7 +10,6 @@
 [ext_resource type="Script" uid="uid://cxx6euexv7ncx" path="res://main_scenes/brick_spawner.gd" id="4_im5ls"]
 [ext_resource type="PackedScene" uid="uid://xo0l45j5xjih" path="res://main_scenes/death_zone.tscn" id="4_w44n0"]
 [ext_resource type="PackedScene" uid="uid://cpexi8jmmgh2p" path="res://main_scenes/bricks.tscn" id="5_6h35g"]
-[ext_resource type="PackedScene" uid="uid://c3l552us7rwt5" path="res://lewds/lewdscenes/fleurdelis_level.tscn" id="8_im5ls"]
 [ext_resource type="Texture2D" uid="uid://b8xmlpoboa0oj" path="res://assets/game_assets/arcade.png" id="8_sp4xh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mf5kq"]
@@ -36,10 +35,7 @@ script = ExtResource("1_gjw5m")
 position = Vector2(640, 360)
 
 [node name="CharacterSprite" type="Node2D" parent="Arcade"]
-position = Vector2(-1, 1)
-
-[node name="fleurdelis_level" parent="Arcade/CharacterSprite" instance=ExtResource("8_im5ls")]
-position = Vector2(-639, -362)
+position = Vector2(-640, -360)
 
 [node name="Arcade" type="Sprite2D" parent="Arcade"]
 position = Vector2(192, 0)

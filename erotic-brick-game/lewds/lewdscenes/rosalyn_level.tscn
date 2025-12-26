@@ -1,5 +1,6 @@
-[gd_scene load_steps=102 format=3 uid="uid://5h35uodjh57u"]
+[gd_scene load_steps=103 format=3 uid="uid://5h35uodjh57u"]
 
+[ext_resource type="Texture2D" uid="uid://ch3dnchwf8qy2" path="res://assets/backgrounds/map_1.png" id="1_518kn"]
 [ext_resource type="Texture2D" uid="uid://colxwrmxdqffg" path="res://lewds/lewd_assets/rosalyn_level/parts/back_hat.png" id="2_buhti"]
 [ext_resource type="Texture2D" uid="uid://ccduw0tuoecgl" path="res://lewds/lewd_assets/rosalyn_level/back_hair/back_hair_00.png" id="3_m0f0h"]
 [ext_resource type="Texture2D" uid="uid://b0u7f5624gsis" path="res://lewds/lewd_assets/rosalyn_level/parts/c_eyes.png" id="6_f1nap"]
@@ -779,6 +780,10 @@ _data = {
 [node name="rosalyn_level" type="Node2D"]
 
 [node name="Node2D" type="Node2D" parent="."]
+
+[node name="Map1" type="Sprite2D" parent="Node2D"]
+position = Vector2(640, 360)
+texture = ExtResource("1_518kn")
 
 [node name="Torso" type="Sprite2D" parent="Node2D"]
 position = Vector2(264, 430)

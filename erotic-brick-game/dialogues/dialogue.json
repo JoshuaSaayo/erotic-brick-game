@@ -2,6 +2,7 @@
   "levels": {
 	"1": {
 	  "character": "fleurdelis",
+	  "character_scene": "res://lewds/lewdscenes/fleurdelis_level.tscn",
 	  "bricks": [
 		[1, 1],
 
@@ -12,15 +13,23 @@
 	},
 	"2": {
 	  "character": "rosalyn",
+	  "character_scene": "res://lewds/lewdscenes/rosalyn_level.tscn",
 	  "bricks": [
-		[2, 2, 2, 2],
-		[2, 3, 3, 2],
-		[2, 2, 2, 2],
-		[1, 1, 1, 1]
+		[1, 1],
 	  ],
 	  "intro": ["Stand firm.", "Your reflexes will be tested."],
 	  "outro": ["You fought well.", "The challenge increases."],
 	  "animation": "res://lewds/lewdscenes/rosalyn_ls.tscn"
+	},
+	"3": {
+	  "character": "shioriko",
+	  "character_scene": "res://characters/dahlia_level.tscn",
+	  "bricks": [
+		[1, 1],
+	  ],
+	  "intro": ["Let's see what you're made of.", "Don't disappoint me."],
+	  "outro": ["Not bad at all.", "Ready for more?"],
+	  "animation": "res://lewds/lewdscenes/dahlia_ls.tscn"
 	}
   }
 }

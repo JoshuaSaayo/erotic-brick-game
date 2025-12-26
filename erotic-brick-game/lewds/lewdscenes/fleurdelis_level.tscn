@@ -97,53 +97,6 @@
 [ext_resource type="Texture2D" uid="uid://boucquofsqdef" path="res://lewds/lewd_assets/fleurdelis_level/boobs_2/boobs_2_18.png" id="93_pky8a"]
 [ext_resource type="Texture2D" uid="uid://chfhaxsy50b7s" path="res://lewds/lewd_assets/fleurdelis_level/boobs_2/boobs_2_19.png" id="94_l77ko"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_b7858"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("16_jih7h")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_jih7h")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_jih7h")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_jih7h")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_jih7h")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_jih7h")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_jih7h")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_jih7h")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_jih7h")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_jih7h")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_jih7h")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_jih7h")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_hpn1b")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
 [sub_resource type="Animation" id="Animation_4kixc"]
 length = 0.001
 tracks/0/type = "value"
@@ -483,110 +436,110 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Torso:position")
+tracks/3/path = NodePath("Torso/RShoulder:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(258, 430), Vector2(258, 435)]
+"values": [-0.0799033, 0.0397966]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Torso/RShoulder:rotation")
+tracks/4/path = NodePath("Torso/LArm:rotation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [-0.0799033, 0.0397966]
+"values": [0.0336647, -0.0559147]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Torso/LArm:rotation")
+tracks/5/path = NodePath("Torso/LThigh:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0336647, -0.0559147]
+"values": [-0.00191656, -0.0462871]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Torso/LThigh:rotation")
+tracks/6/path = NodePath("Torso/RThigh:rotation")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [-0.00191656, -0.0462871]
+"values": [-0.026926, 0.0123829]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Torso/RThigh:rotation")
+tracks/7/path = NodePath("Torso/Face/Mouth1:self_modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [-0.026926, 0.0123829]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Torso/Face/Mouth1:self_modulate")
+tracks/8/path = NodePath("Torso/Face/Mouth2:self_modulate")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Torso/Face/Mouth2:self_modulate")
+tracks/9/path = NodePath("Torso/Face:rotation")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [0.0, -0.0739963]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Torso/Face:rotation")
+tracks/10/path = NodePath("Torso/BackHair:rotation")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, -0.0739963]
+"values": [0.0, -0.0346334]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Torso/BackHair:rotation")
+tracks/11/path = NodePath("Torso:position")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, -0.0346334]
+"values": [Vector2(214, 438), Vector2(214, 431)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_avl45"]
@@ -596,7 +549,62 @@ _data = {
 &"pose_2": SubResource("Animation_b7858")
 }
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_b7858"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_jih7h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_jih7h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_jih7h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_jih7h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_jih7h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_jih7h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_jih7h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_jih7h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_jih7h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_jih7h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_jih7h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_jih7h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hpn1b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="fleurdelis_level" type="Node2D"]
+
+[node name="anim" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Node2D")
+libraries = {
+&"": SubResource("AnimationLibrary_avl45")
+}
+autoplay = "pose_1"
+speed_scale = 0.5
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -693,13 +701,6 @@ texture = ExtResource("15_avl45")
 visible = false
 position = Vector2(13, -40)
 texture = ExtResource("16_ah6j2")
-
-[node name="anim" type="AnimationPlayer" parent="Node2D"]
-libraries = {
-&"": SubResource("AnimationLibrary_avl45")
-}
-autoplay = "pose_1"
-speed_scale = 0.5
 
 [node name="Template" type="Sprite2D" parent="."]
 visible = false
