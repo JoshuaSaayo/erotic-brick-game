@@ -1,7 +1,7 @@
 {
   "levels": {
 	"1": {
-	  "character": "fleurdelis",
+	  "character": "Fleurdelis",
 	  "character_scene": "res://lewds/lewdscenes/fleurdelis_level.tscn",
 	  "bricks": [
 		[1, 1],
@@ -11,31 +11,31 @@
 		[
 			"Welcome to my arcade <3", 
 			"Break the bricks if you dare.",
-			"This magical arcade can turn anyone, including me",
+			"This magical arcade can turn anyone, including me.",
 			"If you desire to grope my boobs and eat my pussy, it is your chance <3"],
 	  "outro": [
 			"Ahh I feel so warm in my body.", 
-			"Come to my special room, I have wonderful rewards for you"],
+			"Come to my special room, I have wonderful rewards for you."],
 	  "animation": "res://lewds/lewdscenes/fleurdelis_ls.tscn"
 	},
 	"2": {
-	  "character": "rosalyn",
+	  "character": "Rosalyn",
 	  "character_scene": "res://lewds/lewdscenes/rosalyn_level.tscn",
 	  "bricks": [
 		[1, 1],
 	  ],
 	  "intro": [
 			"Hiii boy, did you enjoyed Fleurdelis's pussy?", 
-			"My turn now, her pussy might be good but my mouth can suck your cock hard"],
+			"My turn now, her pussy might be good but my mouth can suck your cock hard."],
 	  "outro": [
-			"ugh fuck~ I am fully naked now, I can't control myself",
-			"Show me that dick and fill my mouth"
+			"ugh fuck~ I am fully naked now, I can't control myself.",
+			"Show me that dick and fill my mouth."
 			],
-	  "animation": "res://lewds/lewdscenes/fleurdelis_ls.tscn"
+	  "animation": "res://lewds/lewdscenes/rosalyn_ls.tscn"
 	},
 	"3": {
 	  "character": "shioriko",
-	  "character_scene": "res://characters/shioriko_level.tscn",
+	  "character_scene": "res://lewds/lewdscenes/shioriko_level.tscn",
 	  "bricks": [
 		[1, 1],
 	  ],
@@ -45,8 +45,8 @@
 			],
 	  "outro": [
 			"Mister, why did you finish it fast?",
-			"Are you so turned on me? Please me gentle",
-			"This cat's body is not meant for huge cock"
+			"Are you so turned on me? Please me gentle.",
+			"This cat's body is not meant for huge cock."
 			],
 	  "animation": "res://lewds/lewdscenes/fleurdelis_ls.tscn"
 	}
