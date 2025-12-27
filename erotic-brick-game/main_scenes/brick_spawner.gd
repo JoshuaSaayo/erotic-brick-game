@@ -8,7 +8,7 @@ signal bricks_destroyed(count: int, total: int)
 @export var margin: Vector2 = Vector2(8, 8)
 @export var spawn_start: Marker2D
 @export var powerup_scene: PackedScene
-@export var powerup_chance := 1  # 25% chance
+@export var powerup_chance := 0.25  # 25% chance
 @onready var ball: Ball = $"../Arcade/ball"
 
 var brick_count: int = 0

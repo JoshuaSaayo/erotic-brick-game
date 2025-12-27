@@ -63,12 +63,18 @@ func expand():
 		shape.size.x = expanded_width
 		print("Paddle expanded to width: ", expanded_width)
 	
+	# Scale the sprite to match the new width
+	if $Sprite2D:
+		var scale_factor = expanded_width / normal_width
+		$Sprite2D.scale.x = scale_factor
+		print("Sprite scaled by: ", scale_factor)
+	
 	# Start timer to revert
 	if expand_timer:
 		expand_timer.start(expand_duration)
 		print("Expand timer started for ", expand_duration, " seconds")
 	
-	# Visual feedback (optional)
+	# Visual feedback
 	$Sprite2D.modulate = Color(0.8, 1.0, 0.8)  # Light green tint
 
 func _on_expand_timer_timeout():
@@ -87,8 +93,21 @@ func revert_expand():
 		shape.size.x = normal_width
 		print("Paddle reverted to normal width: ", normal_width)
 	
+	# Reset sprite scale
+	if $Sprite2D:
+		$Sprite2D.scale.x = 1.0
+		print("Sprite scale reset to 1.0")
+	
 	# Remove visual effect
 	$Sprite2D.modulate = Color.WHITE
+
+func spawn_multiball():
+	print("Multi-ball power-up activated!")
+	# Add your multi-ball logic here
+	if ball and ball.has_method("duplicate_ball"):
+		ball.duplicate_ball()
+	else:
+		print("ERROR: Ball doesn't have duplicate_ball() method or ball reference is missing")
 
 func _on_ball_lost() -> void:
 	is_ball_launched = false

@@ -32,6 +32,10 @@ func _physics_process(_delta: float) -> void:
 			collider.decrease_level()
 		
 		_adjust_collision_angle(collider)
+	
+	# Ensure minimum speed - ADD THIS
+	if velocity.length() < ball_speed * 0.5:
+		velocity = velocity.normalized() * ball_speed
 
 func _adjust_collision_angle(collider):
 	if collider is Paddle:
@@ -82,3 +86,19 @@ func _on_game_state_changed(new_phase: GameState.Phase):
 			pass
 		GameState.Phase.POST_DIALOGUE, GameState.Phase.CUTSCENE:
 			stop()
+
+func duplicate_ball():
+	print("Duplicating ball!")
+	
+	# Create a new ball instance
+	var new_ball = duplicate() as Ball
+	get_parent().add_child(new_ball)
+	
+	# Initialize the new ball
+	new_ball.is_launched = true
+	new_ball.is_active = true
+	new_ball.global_position = global_position + Vector2(10, 0)  # Offset slightly
+	
+	# Give it a slightly different direction (use velocity, not linear_velocity)
+	var new_direction = velocity.normalized().rotated(deg_to_rad(30))
+	new_ball.velocity = new_direction * velocity.length()
