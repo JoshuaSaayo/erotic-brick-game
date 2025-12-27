@@ -8,7 +8,7 @@ signal bricks_destroyed(count: int, total: int)
 @export var margin: Vector2 = Vector2(8, 8)
 @export var spawn_start: Marker2D
 @export var powerup_scene: PackedScene
-@export var powerup_chance := 0.25  # 25% chance
+@export var powerup_chance := 1  # 25% chance
 @onready var ball: Ball = $"../Arcade/ball"
 
 var brick_count: int = 0
@@ -114,25 +114,15 @@ func _try_spawn_powerup(position: Vector2):
 	if powerup_scene:
 		print("=== SPAWNING POWERUP ===")
 		
-		# Debug: Show where powerup would spawn
-		var debug_circle = Sprite2D.new()
-		var image = Image.create(16, 16, false, Image.FORMAT_RGBA8)
-		image.fill(Color.RED)
-		var texture = ImageTexture.create_from_image(image)
-		debug_circle.texture = texture
-		debug_circle.position = position
-		debug_circle.z_index = 100
-		add_child(debug_circle)
-		
-		# Remove debug after 1 second
-		await get_tree().create_timer(1.0).timeout
-		debug_circle.queue_free()
-		
-		# Spawn actual powerup
+		# Spawn powerup
 		var powerup: PowerUp = powerup_scene.instantiate()
+		
+		# Set type BEFORE adding to scene
+		powerup.type = randi() % PowerUp.Type.size()
+		
+		# Now add to scene (so _ready() runs with the correct type)
 		add_child(powerup)
 		powerup.global_position = position
-		powerup.type = randi() % PowerUp.Type.size()
 		
 		print("Powerup spawned at: ", position, " type: ", powerup.type)
 	else:
