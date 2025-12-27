@@ -100,5 +100,12 @@ func _play_climax():
 	if instruction_label:
 		instruction_label.visible = false
 	
+	# Wait a moment to let players see the climax animation finish
+	await get_tree().create_timer(1.5).timeout
+	
+	# Fade to black before signaling completion
+	TransitionManager.fade_in(1.0)
+	await TransitionManager.fade_in_completed
+	
 	# Signal completion
 	emit_signal("animation_completed")
