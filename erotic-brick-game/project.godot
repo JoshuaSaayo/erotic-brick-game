@@ -48,3 +48,4 @@ right={
 2d_physics/layer_2="paddle"
 2d_physics/layer_3="walls"
 2d_physics/layer_4="brick"
+2d_physics/layer_5="power_ups"

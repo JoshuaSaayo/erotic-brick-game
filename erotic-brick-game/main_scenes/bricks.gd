@@ -2,7 +2,7 @@ extends RigidBody2D
 
 class_name Brick
 
-signal brick_destroyed
+signal brick_destroyed(brick: Brick)  # Specify parameter type
 
 var level = 1
 
@@ -26,7 +26,7 @@ func set_level(new_level: int):
 	
 func decrease_level():
 	if level > 1:
-		set_level(level -1)
+		set_level(level - 1)
 	else:
 		fade_out()
 		
@@ -37,8 +37,8 @@ func fade_out():
 	tween.tween_callback(destroy)
 	
 func destroy():
+	brick_destroyed.emit(self)  # EMIT ONLY HERE
 	queue_free()
-	brick_destroyed.emit()
 
 func get_width():
 	return get_size().x
