@@ -1,4 +1,4 @@
-[gd_scene load_steps=110 format=3 uid="uid://c2jo184vm8kq8"]
+[gd_scene load_steps=112 format=3 uid="uid://c2jo184vm8kq8"]
 
 [ext_resource type="Texture2D" uid="uid://dnh38skclhmox" path="res://lewds/lewd_assets/rosalyn_ls/parts/back_hair.png" id="1_aw1um"]
 [ext_resource type="Script" uid="uid://dkkvfcu7xl341" path="res://main_scenes/animation_controller.gd" id="1_hsib8"]
@@ -918,6 +918,12 @@ _data = {
 font = ExtResource("103_ce56j")
 font_size = 32
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ce56j"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4q5v"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [node name="rosalyn_ls" type="Node2D"]
 script = ExtResource("1_hsib8")
 
@@ -1051,7 +1057,13 @@ text = "lorem ipsum"
 label_settings = SubResource("LabelSettings_g4q5v")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
-offset_left = 1245.0
-offset_top = 672.0
-offset_right = 1249.0
-offset_bottom = 699.0
+offset_left = 347.0
+offset_top = 60.0
+offset_right = 351.0
+offset_bottom = 97.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("103_ce56j")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/background = SubResource("StyleBoxFlat_ce56j")
+theme_override_styles/fill = SubResource("StyleBoxFlat_g4q5v")

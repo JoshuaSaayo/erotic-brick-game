@@ -24,7 +24,7 @@ func _ready():
 		progress_bar.max_value = HOLD_DURATION
 	
 	if instruction_label:
-		instruction_label.text = "Hold to speed up"
+		instruction_label.text = "Hold to fuck her faster!"
 	
 	# Start animation
 	if anim:
@@ -51,7 +51,7 @@ func _start_holding():
 		progress_bar.value = 0
 	
 	if instruction_label:
-		instruction_label.text = "Keep holding..."
+		instruction_label.text = "Keep fucking to cum..."
 
 func _stop_holding():
 	is_holding = false
@@ -64,7 +64,7 @@ func _stop_holding():
 		progress_bar.visible = false
 	
 	if instruction_label and not climax_played:
-		instruction_label.text = "Hold to speed up"
+		instruction_label.text = "Keep fucking to cum..."
 
 func _process(delta):
 	if is_holding and not climax_played:

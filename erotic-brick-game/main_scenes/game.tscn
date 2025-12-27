@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cy0qqardac6dg"]
+[gd_scene load_steps=15 format=3 uid="uid://cy0qqardac6dg"]
 
 [ext_resource type="Script" uid="uid://b8n0rt5pe6s3w" path="res://main_scenes/game.gd" id="1_gjw5m"]
 [ext_resource type="PackedScene" uid="uid://dlpvhjkhrb4xu" path="res://main_scenes/HUD.tscn" id="1_is35i"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cpexi8jmmgh2p" path="res://main_scenes/bricks.tscn" id="5_6h35g"]
 [ext_resource type="Texture2D" uid="uid://b8xmlpoboa0oj" path="res://assets/game_assets/arcade.png" id="8_sp4xh"]
 [ext_resource type="PackedScene" uid="uid://cm2vmkmh5vo1u" path="res://main_scenes/power_up.tscn" id="10_gjw5m"]
+[ext_resource type="PackedScene" uid="uid://bm4jt20egafa8" path="res://UI/spark_effect.tscn" id="11_mf5kq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mf5kq"]
 animations = [{
@@ -38,6 +39,9 @@ position = Vector2(640, 360)
 [node name="CharacterSprite" type="Node2D" parent="Arcade"]
 position = Vector2(-859, -655)
 scale = Vector2(0.7, 0.7)
+
+[node name="spark_effect" parent="Arcade" instance=ExtResource("11_mf5kq")]
+position = Vector2(352, 257)
 
 [node name="Arcade" type="Sprite2D" parent="Arcade"]
 position = Vector2(192, 0)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=146 format=3 uid="uid://dv6u1lgk6yyq"]
+[gd_scene load_steps=148 format=3 uid="uid://dv6u1lgk6yyq"]
 
 [ext_resource type="Texture2D" uid="uid://cda45rx3373mq" path="res://lewds/lewd_assets/shioriko_ls/parts/torso.png" id="1_cd6ty"]
 [ext_resource type="Script" uid="uid://dkkvfcu7xl341" path="res://main_scenes/animation_controller.gd" id="1_o1gaf"]
@@ -1206,6 +1206,12 @@ _data = {
 font = ExtResource("60_t5m3i")
 font_size = 32
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o1gaf"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_43gfc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [node name="shioriko_ls" type="Node2D"]
 script = ExtResource("1_o1gaf")
 
@@ -1341,7 +1347,13 @@ text = "lorem ipsum"
 label_settings = SubResource("LabelSettings_6abud")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
-offset_left = 1245.0
-offset_top = 672.0
-offset_right = 1249.0
-offset_bottom = 699.0
+offset_left = 347.0
+offset_top = 60.0
+offset_right = 351.0
+offset_bottom = 97.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("60_t5m3i")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/background = SubResource("StyleBoxFlat_o1gaf")
+theme_override_styles/fill = SubResource("StyleBoxFlat_43gfc")

@@ -2,9 +2,11 @@ extends Node
 
 @onready var brick_spawner: BrickSpawner = $BrickSpawner
 @onready var character_container: Node2D = $Arcade/CharacterSprite
+@onready var spark_container: Node2D = $Arcade/spark_effect
 
 var current_character_scene: Node = null
 var character_anim: AnimationPlayer = null  # NEW: Store reference to animation player
+var spark_particles: PackedScene = preload("res://UI/spark_effect.tscn")
 
 func _ready():
 	print("Game scene loaded for level ", GameState.current_level)
@@ -41,6 +43,9 @@ func _load_character():
 		# Store reference to animation player
 		character_anim = character_scene.get_node_or_null("anim")
 		if character_anim:
+			# Connect to animation started signal
+			character_anim.animation_started.connect(_on_character_animation_started.bind())
+			
 			# Play initial pose
 			if character_anim.has_animation("pose_1"):
 				character_anim.play("pose_1")
@@ -53,6 +58,44 @@ func _load_character():
 		print("Character loaded")
 	else:
 		print("ERROR: Character scene not found: ", scene_path)
+		
+func _on_character_animation_started(anim_name: String):
+	print("Animation started: ", anim_name)
+	
+	if anim_name == "pose_2":
+		print("Pose_2 animation started - triggering spark effects!")
+		trigger_spark_effects()
+
+func trigger_spark_effects():
+	if not current_character_scene:
+		return
+	
+	# Get character position
+	var char_pos = current_character_scene.global_position
+	
+	# Create spark effect at character position
+	create_spark_effect(char_pos + Vector2(0, -50))  # Slightly above character
+	
+	# Create additional sparks around character after short delay
+	await get_tree().create_timer(0.1).timeout
+	create_spark_effect(char_pos + Vector2(-40, 0))  # Left
+	await get_tree().create_timer(0.1).timeout
+	create_spark_effect(char_pos + Vector2(40, 0))   # Right
+		
+func create_spark_effect(position: Vector2):
+	if spark_particles:
+		var particles = spark_particles.instantiate()
+		spark_container.add_child(particles)
+		particles.global_position = position
+		
+		# Make sure the particles start emitting
+		if particles is GPUParticles2D:
+			particles.emitting = true
+		else:
+			# If the root is not GPUParticles2D, find it
+			var gpu_particles = particles.get_node_or_null("GPUParticles2D")
+			if gpu_particles:
+				gpu_particles.emitting = true
 
 # NEW: Handle brick destruction progress
 func _on_bricks_destroyed(destroyed: int, total: int):

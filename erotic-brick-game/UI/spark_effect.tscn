@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://bm4jt20egafa8"]
+
+[ext_resource type="Texture2D" uid="uid://dum4x0u46en8j" path="res://assets/game_assets/spark.png" id="1_cvm1y"]
+[ext_resource type="Script" uid="uid://c72mo5bfawu2f" path="res://UI/gpu_particles_2d.gd" id="2_ce68x"]
+
+[sub_resource type="Curve" id="Curve_ce68x"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_1h64g"]
+curve = SubResource("Curve_ce68x")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ce68x"]
+lifetime_randomness = 0.2
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(10, 10, 10)
+emission_shape = 1
+emission_sphere_radius = 20.0
+initial_velocity_min = 10.0
+initial_velocity_max = 80.0
+gravity = Vector3(0, 98, 0)
+scale_max = 5.0
+scale_curve = SubResource("CurveTexture_1h64g")
+
+[node name="spark_effect" type="Node2D"]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(239, 240)
+emitting = false
+amount = 100
+texture = ExtResource("1_cvm1y")
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+randomness = 0.55
+process_material = SubResource("ParticleProcessMaterial_ce68x")
+script = ExtResource("2_ce68x")
