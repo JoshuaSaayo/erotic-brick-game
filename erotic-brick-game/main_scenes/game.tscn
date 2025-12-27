@@ -82,6 +82,7 @@ death_zone = NodePath("../death_zone")
 hud = NodePath("../../HUD")
 
 [node name="power_up" parent="Arcade" instance=ExtResource("10_gjw5m")]
+visible = false
 
 [node name="BrickSpawner" type="Node" parent="." node_paths=PackedStringArray("spawn_start")]
 script = ExtResource("4_im5ls")
